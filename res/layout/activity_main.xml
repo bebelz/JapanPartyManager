@@ -9,8 +9,41 @@
     tools:context=".MainActivity" >
 
     <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Choix du Mode"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/buttonBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonRestau"
+        android:layout_alignBottom="@+id/buttonRestau"
+        android:layout_centerHorizontal="true"
+        android:text="Mode Bar" />
+
+    <Button
+        android:id="@+id/buttonRestau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="108dp"
+        android:text="Mode Restauration" />
+
+    <Button
+        android:id="@+id/buttonEntree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonBar"
+        android:layout_alignBottom="@+id/buttonBar"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="148dp"
+        android:text="Mode Entrée" />
 
 </RelativeLayout>

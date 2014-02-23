@@ -4,5 +4,8 @@
     <string name="app_name">JapanPartyManager</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_restau">Restau</string>
+    <string name="title_activity_bar">BarActivity</string>
+    <string name="title_activity_entree">EntreeActivity</string>
 
 </resources>

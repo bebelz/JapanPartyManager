@@ -22,6 +22,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="fr.japanpartymanager.RestauActivity"
+            android:label="@string/title_activity_restau" >
+        </activity>
+        <activity
+            android:name="fr.japanpartymanager.BarActivity"
+            android:label="@string/title_activity_bar" >
+        </activity>
+        <activity
+            android:name="fr.japanpartymanager.EntreeActivity"
+            android:label="@string/title_activity_entree" >
+        </activity>
     </application>
 
 </manifest>
