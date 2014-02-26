@@ -1,4 +1,6 @@
-package fr.japanpartymanager;
+package fr.japanpartymanager.activity;
+
+import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +9,9 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import fr.japanpartymanager.R;
+import fr.japanpartymanager.sql.Transaction;
+import fr.japanpartymanager.sql.TransactionDB;
 
 public class MainActivity extends Activity {
 	Button buttonRestau = null;
@@ -26,6 +31,25 @@ public class MainActivity extends Activity {
         buttonRestau.setOnClickListener(listenerMain);
         buttonBar.setOnClickListener(listenerMain);
         buttonEntree.setOnClickListener(listenerMain);
+        
+        TransactionDB dbTransaction = new TransactionDB(this);
+        
+        dbTransaction.open();
+        
+        //Transaction tr = new Transaction(2, 3, System.currentTimeMillis()+"");
+        
+        //Long lo = dbTransaction.insertTransaction(tr);
+        
+        List<Transaction> temp = dbTransaction.getTransactionByIdProduit("0");
+        
+        if(temp.size() == 0) System.out.println("NULL");
+        else {
+        	for(Transaction t : temp) {
+        		System.out.println(t.toString());
+        	}
+        }
+        
+        dbTransaction.close();
     }
 
     private OnClickListener listenerMain = new OnClickListener() {

@@ -1,21 +1,22 @@
-package fr.japanpartymanager;
+package fr.japanpartymanager.activity;
 
+import fr.japanpartymanager.R;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 
-public class EntreeActivity extends Activity {
+public class RestauActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_entree);
+		setContentView(R.layout.activity_restau);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		//getMenuInflater().inflate(R.menu.entree, menu);
+		//getMenuInflater().inflate(R.menu.restau, menu);
 		return true;
 	}
 
