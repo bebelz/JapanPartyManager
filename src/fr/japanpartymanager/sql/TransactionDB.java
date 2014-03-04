@@ -75,6 +75,7 @@ public class TransactionDB {
     				COL_ID + " LIKE \"" + id +"\"", 
     				null, null, null, null);
     	
+    	c.moveToFirst();
     	Transaction toReturn = cursorToTransaction(c);
     	
     	c.close();
@@ -86,12 +87,16 @@ public class TransactionDB {
      */
     public List<Transaction> getAllTransaction() {
     	List<Transaction> toReturn = new ArrayList<Transaction>();
-    	Cursor c = db.query(TABLE_TRANSACTIONS, allCollumns,
-    			null, null, null, null, null);
     	
-    	while(c.isAfterLast()) {
+    	Cursor c = db.query(TABLE_TRANSACTIONS, allCollumns, 
+				null, null, null, null, null);
+    	
+    	c.moveToFirst();
+    	do {
     		toReturn.add(cursorToTransaction(c));
+    		c.moveToNext();
     	}
+    	while (!c.isAfterLast());
     	
     	c.close();
     	return toReturn;
@@ -100,12 +105,15 @@ public class TransactionDB {
     public List<Transaction> getTransactionByIdProduit(String id_produit) {
     	List<Transaction> toReturn = new ArrayList<Transaction>();
     	Cursor c = db.query(TABLE_TRANSACTIONS, allCollumns,
-    			COL_ID_PRODUIT + " LIKE \"" + id_produit +"\"",
+    			COL_ID_PRODUIT + " = " + id_produit,
     			null, null, null, null);
     	
-    	while(c.isAfterLast()) {
+    	c.moveToFirst();
+    	do {
     		toReturn.add(cursorToTransaction(c));
+    		c.moveToNext();
     	}
+    	while (!c.isAfterLast());
     	
     	c.close();
     	return toReturn;
@@ -121,7 +129,7 @@ public class TransactionDB {
 			return null;
  
 		//Sinon on se place sur le premier élément
-		c.moveToFirst();
+		//c.moveToFirst();
 		//On créé un livre
 		Transaction toReturn = new Transaction();
 		//on lui affecte toutes les infos grâce aux infos contenues dans le Cursor

@@ -36,11 +36,20 @@ public class MainActivity extends Activity {
         
         dbTransaction.open();
         
-        //Transaction tr = new Transaction(2, 3, System.currentTimeMillis()+"");
+        /*Transaction tr = new Transaction(2, 3, System.currentTimeMillis()+"");
+        Transaction trr = new Transaction(2, 3, System.currentTimeMillis()+"");
+        Transaction trrr = new Transaction(2, 3, System.currentTimeMillis()+"");
         
-        //Long lo = dbTransaction.insertTransaction(tr);
+        System.out.println(dbTransaction.insertTransaction(tr));
+        System.out.println(dbTransaction.insertTransaction(trr));
+        System.out.println(dbTransaction.insertTransaction(trrr));*/
         
-        List<Transaction> temp = dbTransaction.getTransactionByIdProduit("0");
+        /*Transaction tempAlone;
+        tempAlone = dbTransaction.getTransactionById("1");
+        if (tempAlone == null) System.out.println("NULL");
+        else System.out.println(tempAlone);*/
+        
+        List<Transaction> temp = dbTransaction.getTransactionByIdProduit("2");
         
         if(temp.size() == 0) System.out.println("NULL");
         else {
