@@ -25,7 +25,7 @@ public class TransactionsManager {
 	 * @param id_produit
 	 * @param quantite
 	 * @return l'id de la Transaction
-	 * PostC : Si return -1, erreur d'insertion !
+	 * @PostC Si return -1, erreur d'insertion !
 	 */
 	public long venteProduit(int id_produit, int quantite) {
 		long toReturn;
@@ -73,5 +73,33 @@ public class TransactionsManager {
 		prixProduit = produits.getPrixProduit(id_produit);
 		
 		return nombreVentesProduit * prixProduit;
+	}
+	
+	/**
+	 * @param id
+	 * @return
+	 */
+	public Transaction getTransaction(int id) {
+		Transaction toReturn;
+		
+		dbTransaction.open();
+		toReturn = dbTransaction.getTransactionById(id+"");
+		dbTransaction.close();
+		
+		return toReturn;
+	}
+	
+	/**
+	 * @param id_produit
+	 * @return
+	 */
+	public List<Transaction> getTransactionsProduit(int id_produit) {
+		List<Transaction> toReturn;
+		
+		dbTransaction.open();
+		toReturn = dbTransaction.getTransactionByIdProduit(id_produit+"");
+		dbTransaction.close();
+		
+		return toReturn;
 	}
 }

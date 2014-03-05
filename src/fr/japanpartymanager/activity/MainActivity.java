@@ -1,7 +1,5 @@
 package fr.japanpartymanager.activity;
 
-import java.util.List;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,9 +8,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import fr.japanpartymanager.R;
-import fr.japanpartymanager.sql.Transaction;
-import fr.japanpartymanager.sql.TransactionDB;
-import fr.japanpartymanager.util.ProduitsManager;
 
 public class MainActivity extends Activity {
 	Button buttonRestau = null;
@@ -32,41 +27,6 @@ public class MainActivity extends Activity {
         buttonRestau.setOnClickListener(listenerMain);
         buttonBar.setOnClickListener(listenerMain);
         buttonEntree.setOnClickListener(listenerMain);
-        
-        TransactionDB dbTransaction = new TransactionDB(this);
-        
-        dbTransaction.open();
-        
-/*        Transaction tr = new Transaction(2, 3, System.currentTimeMillis()+"");
-        Transaction trr = new Transaction(2, 3, System.currentTimeMillis()+"");
-        Transaction trrr = new Transaction(2, 3, System.currentTimeMillis()+"");
-        
-        System.out.println(dbTransaction.insertTransaction(tr));
-        System.out.println(dbTransaction.insertTransaction(trr));
-        System.out.println(dbTransaction.insertTransaction(trrr));*/
-        
-        Transaction tempAlone;
-        tempAlone = dbTransaction.getTransactionById("1");
-        if (tempAlone == null) System.out.println("NULL");
-        else System.out.println(tempAlone);
-        
-        List<Transaction> temp = dbTransaction.getTransactionByIdProduit("2");
-        
-        if(temp.size() == 0 || temp == null) System.out.println("NULL");
-        else {
-        	for(Transaction t : temp) {
-        		System.out.println(t.toString());
-        	}
-        }
-        
-        dbTransaction.close();
-        
-        System.out.println("TESTS PRODUITSMANAGER");
-        ProduitsManager prod = new ProduitsManager();
-        System.out.println(prod.getPrixProduit(0));
-        System.out.println(prod.getPrixProduit(1));
-        System.out.println(prod.getPrixProduit(2));
-        System.out.println(prod.getPrixProduit(-1));
     }
 
     private OnClickListener listenerMain = new OnClickListener() {
