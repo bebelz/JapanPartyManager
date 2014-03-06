@@ -113,8 +113,9 @@
 
                 <TableRow
                     android:id="@+id/tableRowEnTete"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.05" >
 
                     <TextView
                         android:id="@+id/textViewCommande"
@@ -122,21 +123,96 @@
                         android:layout_height="wrap_content"
                         android:text="COMMANDE"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowCanettes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.05" >
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Canettes"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <EditText
+                        android:id="@+id/editText2"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" >
+
+                        <requestFocus />
+                    </EditText>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowBouteilles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.05" >
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bouteilles"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <EditText
+                        android:id="@+id/editText3"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
 
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRowListView"
+                    android:id="@+id/tableRowEau"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.05" >
 
-                    <ListView
-                        android:id="@+id/listViewCommande"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" >
-                    </ListView>
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Eau"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <EditText
+                        android:id="@+id/editText4"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
 
                 </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.10" >
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:text="Total"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                    <EditText
+                        android:id="@+id/editText5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:inputType="number" />
+
+                </TableRow>
+
             </TableLayout>
 
         </LinearLayout>
