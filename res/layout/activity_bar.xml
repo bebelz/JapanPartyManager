@@ -33,17 +33,17 @@
                     android:orientation="vertical" >
 
                     <ImageButton
-                        android:id="@+id/imageButtonCanettes"
+                        android:id="@+id/imageButtonSodasJus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:src="@drawable/logo_canette_ok" />
 
                     <TextView
-                        android:id="@+id/labelCannettes"
+                        android:id="@+id/labelSodasJus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Canettes"
+                        android:text="Sodas/Jus"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
                 </LinearLayout>
             </LinearLayout>
@@ -59,17 +59,18 @@
                     android:orientation="vertical" >
 
                     <ImageButton
-                        android:id="@+id/imageButtonBouteilles"
+                        android:id="@+id/imageButtonCafeThe"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:src="@drawable/logo_bouteille_fanta" />
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/cafe" />
 
                     <TextView
-                        android:id="@+id/labelBouteilles"
+                        android:id="@+id/labelCafeThe"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Bouteilles"
+                        android:text="Café/Thé"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
                 </LinearLayout>
 
@@ -86,17 +87,16 @@
                     android:orientation="vertical" >
 
                     <ImageButton
-                        android:id="@+id/imageButtonEau"
+                        android:id="@+id/imageButtonConfiserie"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:src="@drawable/logo_bouteille_eau" />
+                        android:src="@drawable/mars" />
 
                     <TextView
-                        android:id="@+id/labelEau"
+                        android:id="@+id/labelConfiserie"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Eau"
+                        android:text="Confiserie"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
                 </LinearLayout>
             </LinearLayout>
@@ -133,27 +133,39 @@
                     android:layout_weight="0.05" >
 
                     <TextView
-                        android:id="@+id/labelTotalCanettes"
+                        android:id="@+id/labelTotalSodasJus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Canettes"
+                        android:text="Sodas/Jus"
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
                         android:id="@+id/editTextTotalCanettes"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:inputType="number" >
-
+                        android:inputType="number" 
+						android:editable="false"
+						android:cursorVisible="false">
                         <requestFocus />
                     </EditText>
 
+                    <TextView
+                        android:id="@+id/labelFoisPrixSodasJus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="x 1€"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
                     <Button
-                        android:id="@+id/buttonSupprCanettes"
+                        android:id="@+id/buttonSupprSodasJus"
                         style="?android:attr/buttonStyleSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
                         android:text="Suppr" />
+
                 </TableRow>
 
                 <TableRow
@@ -163,24 +175,37 @@
                     android:layout_weight="0.05" >
 
                     <TextView
-                        android:id="@+id/labelTotalBouteilles"
+                        android:id="@+id/labelTotalCafeThe"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Bouteilles"
+                        android:text="Café/Thé"
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/editTextTotalBouteilles"
+                        android:id="@+id/editTextTotalCafeThe"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:editable="false"
+						android:cursorVisible="false" />
+
+                    <TextView
+                        android:id="@+id/labelFoisPrixCafeThe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="x 1€"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
 
                     <Button
-                        android:id="@+id/buttonSupprBouteilles"
+                        android:id="@+id/buttonSupprCafeThe"
                         style="?android:attr/buttonStyleSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
                         android:text="Suppr" />
+
                 </TableRow>
 
                 <TableRow
@@ -193,20 +218,33 @@
                         android:id="@+id/labelTotalEau"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Eau"
+                        android:text="Confiserie"
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/editTextTotalEau"
+                        android:id="@+id/editTextTotalConfiserie"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:inputType="number" />
+                        android:inputType="number" 
+                        android:editable="false"
+						android:cursorVisible="false"/>
 
-                    <Button
-                        android:id="@+id/buttonSupprEau"
+                    <TextView
+                        android:id="@+id/labelFoisPrixConfiserie"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="x 1€"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <Button
+                        android:id="@+id/buttonSupprConfiserie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
                         android:text="Suppr" />
+
                 </TableRow>
 
                 <TableRow
@@ -228,7 +266,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:editable="false"
+						android:cursorVisible="false" />
                 </TableRow>
 
                 <TableRow
