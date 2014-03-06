@@ -9,145 +9,137 @@
     tools:context=".BarActivity" >
 
     <LinearLayout
+        android:id="@+id/LinearLayoutGlobal"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical" >
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.33"
-            android:orientation="horizontal" >
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1.10"
+            android:orientation="vertical" >
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="157dp"
+                android:orientation="horizontal" >
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
                     android:orientation="vertical" >
 
                     <ImageButton
                         android:id="@+id/imageButtonCanettes"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:scaleType="centerCrop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
                         android:src="@drawable/logo_canette_ok" />
 
                     <TextView
-                        android:id="@+id/textViewCanette"
+                        android:id="@+id/labelCannettes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Canettes"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
+                </LinearLayout>
+            </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/textViewNbCanette"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.33" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonBouteilles"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nb :"
-                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                        android:layout_gravity="left"
+                        android:src="@drawable/logo_bouteille_fanta" />
 
+                    <TextView
+                        android:id="@+id/labelBouteilles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bouteilles"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
                 </LinearLayout>
 
-                <Button
-                    android:id="@+id/button1"
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.33" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonEau"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:src="@drawable/logo_bouteille_eau" />
+
+                    <TextView
+                        android:id="@+id/labelEau"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Eau"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.33"
-            android:orientation="horizontal" >
+            android:layout_width="289dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.24" >
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
 
-                <ImageButton
-                    android:id="@+id/ImageButtonBouteilles"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/logo_bouteille_fanta" />
-
-                <TextView
-                    android:id="@+id/textViewBouteille"
+                <TableRow
+                    android:id="@+id/tableRowEnTete"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Bouteilles"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
+                    android:layout_height="wrap_content" >
 
-                <TextView
-                    android:id="@+id/textViewNbBouteilles"
+                    <TextView
+                        android:id="@+id/textViewCommande"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="COMMANDE"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowListView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nb :"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:layout_height="wrap_content" >
 
-            </LinearLayout>
+                    <ListView
+                        android:id="@+id/listViewCommande"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                    </ListView>
 
-            <Button
-                android:id="@+id/button2"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+                </TableRow>
+            </TableLayout>
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.33"
-            android:orientation="horizontal" >
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
-
-                <ImageButton
-                    android:id="@+id/ImageButtonEau"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:adjustViewBounds="false"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/logo_bouteille_eau" />
-
-                <TextView
-                    android:id="@+id/textViewEau"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Eau"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
-
-                <TextView
-                    android:id="@+id/textViewNbEau"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nb :"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
-        </LinearLayout>
-
     </LinearLayout>
 
 </RelativeLayout>
