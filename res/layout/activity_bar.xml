@@ -350,12 +350,12 @@
                     android:layout_weight="0.15" >
 
                     <Button
-                        android:id="@+id/buttonCommander"
+                        android:id="@+id/buttonValiderCommande"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
                         android:layout_weight="0.2"
-                        android:text="Commander" />
+                        android:text="Valider Commande" />
 
                     <Button
                         android:id="@+id/buttonAnnulerCommande"
