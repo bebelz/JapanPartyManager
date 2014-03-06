@@ -132,14 +132,14 @@
                     android:layout_weight="0.05" >
 
                     <TextView
-                        android:id="@+id/textView1"
+                        android:id="@+id/labelTotalCanettes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Canettes"
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/editText2"
+                        android:id="@+id/editTextTotalCanettes"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:inputType="number" >
@@ -155,14 +155,14 @@
                     android:layout_weight="0.05" >
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/labelTotalBouteilles"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Bouteilles"
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/editText3"
+                        android:id="@+id/editTextTotalBouteilles"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:inputType="number" />
@@ -176,14 +176,14 @@
                     android:layout_weight="0.05" >
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/labelTotalEau"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Eau"
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/editText4"
+                        android:id="@+id/editTextTotalEau"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:inputType="number" />
@@ -197,7 +197,7 @@
                     android:layout_weight="0.10" >
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/labelTotal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
@@ -205,7 +205,7 @@
                         android:textAppearance="?android:attr/textAppearanceLarge" />
 
                     <EditText
-                        android:id="@+id/editText5"
+                        android:id="@+id/editTextTotal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
