@@ -4,9 +4,14 @@ import fr.japanpartymanager.R;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.widget.Button;
 
 public class BarActivity extends Activity {
 
+	Button buttonCanettes = null;
+	Button buttonBouteilles = null;
+	Button buttonEau = null;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

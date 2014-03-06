@@ -18,7 +18,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1.10"
+            android:layout_weight="0.97"
             android:orientation="vertical" >
 
             <LinearLayout
@@ -109,7 +109,8 @@
 
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:layout_weight="1.39" >
 
                 <TableRow
                     android:id="@+id/tableRowEnTete"
@@ -146,6 +147,13 @@
 
                         <requestFocus />
                     </EditText>
+
+                    <Button
+                        android:id="@+id/buttonSupprCanettes"
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Suppr" />
                 </TableRow>
 
                 <TableRow
@@ -167,6 +175,12 @@
                         android:layout_height="wrap_content"
                         android:inputType="number" />
 
+                    <Button
+                        android:id="@+id/buttonSupprBouteilles"
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Suppr" />
                 </TableRow>
 
                 <TableRow
@@ -188,13 +202,18 @@
                         android:layout_height="wrap_content"
                         android:inputType="number" />
 
+                    <Button
+                        android:id="@+id/buttonSupprEau"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Suppr" />
                 </TableRow>
 
                 <TableRow
                     android:id="@+id/tableRowTotal"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.10" >
+                    android:layout_weight="0.05" >
 
                     <TextView
                         android:id="@+id/labelTotal"
@@ -210,12 +229,34 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
                         android:inputType="number" />
-
                 </TableRow>
 
-            </TableLayout>
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.15" >
 
+                    <Button
+                        android:id="@+id/buttonCommander"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="0.2"
+                        android:text="Commander" />
+
+                    <Button
+                        android:id="@+id/buttonAnnulerCommande"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|right"
+                        android:layout_weight="0.3"
+                        android:text="Annuler" />
+
+                </TableRow>
+            </TableLayout>
         </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>
