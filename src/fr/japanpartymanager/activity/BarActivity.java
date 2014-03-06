@@ -28,6 +28,7 @@ public class BarActivity extends Activity {
 	Button buttonSupprConfiserie 	= null;
 	Button buttonSupprBubbleTea		= null;
 	Button buttonAnnulerCommande	= null;
+	Button buttonValiderCommande 	= null;
 	
 	EditText editTextSodasJus 		= null;
 	EditText editTextCafeThe 		= null;
@@ -71,6 +72,7 @@ public class BarActivity extends Activity {
         buttonSupprBubbleTea 	= (Button)findViewById(R.id.buttonSupprBubbleTea);
         
         buttonAnnulerCommande	= (Button)findViewById(R.id.buttonAnnulerCommande);
+        buttonValiderCommande	= (Button)findViewById(R.id.buttonValiderCommande);
         
         editTextSodasJus 		= (EditText)findViewById(R.id.editTextTotalSodasJus);
         editTextCafeThe 		= (EditText)findViewById(R.id.editTextTotalCafeThe);
