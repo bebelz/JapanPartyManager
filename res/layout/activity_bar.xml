@@ -18,25 +18,24 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="0.97"
+            android:layout_weight="0.50"
             android:orientation="vertical" >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="157dp"
+                android:layout_weight="0.09"
                 android:orientation="horizontal" >
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.33"
                     android:orientation="vertical" >
 
                     <ImageButton
                         android:id="@+id/imageButtonSodasJus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="left"
                         android:src="@drawable/logo_canette_ok" />
 
                     <TextView
@@ -45,7 +44,31 @@
                         android:layout_height="wrap_content"
                         android:text="Sodas/Jus"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
+
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonBubbleTea"
+                        android:layout_width="match_parent"
+                        android:layout_height="125dp"
+                        android:scaleType="center"
+                        android:src="@drawable/bubbletea" />
+
+                    <TextView
+                        android:id="@+id/labelBubbleTea"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bubble Tea"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -98,6 +121,7 @@
                         android:layout_height="wrap_content"
                         android:text="Confiserie"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
+
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -105,6 +129,7 @@
         <LinearLayout
             android:layout_width="289dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
             android:layout_weight="0.24" >
 
             <TableLayout
@@ -140,7 +165,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/editTextTotalCanettes"
+                        android:id="@+id/editTextTotalSodasJus"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:inputType="number" 
@@ -240,6 +265,44 @@
 
                     <Button
                         android:id="@+id/buttonSupprConfiserie"
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Suppr" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.05" >
+
+                    <TextView
+                        android:id="@+id/labelTotalBubbleTea"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bubble Tea"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <EditText
+                        android:id="@+id/editTextTotalBubbleTea"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+
+                    <TextView
+                        android:id="@+id/labelFoisPrixBubbleTea"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="x 2.50€"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <Button
+                        android:id="@+id/buttonSupprBubbleTea"
+                        style="?android:attr/buttonStyleSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -251,7 +314,7 @@
                     android:id="@+id/tableRowTotal"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.05" >
+                    android:layout_weight="0.10" >
 
                     <TextView
                         android:id="@+id/labelTotal"
@@ -269,10 +332,19 @@
                         android:inputType="number"
                         android:editable="false"
 						android:cursorVisible="false" />
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:text="€"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow1"
+                    android:id="@+id/tableRowCommanderAnnuler"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="0.15" >
@@ -294,6 +366,7 @@
                         android:text="Annuler" />
 
                 </TableRow>
+
             </TableLayout>
         </LinearLayout>
 
