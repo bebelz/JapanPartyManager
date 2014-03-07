@@ -7,6 +7,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -31,6 +32,7 @@ public class BarActivity extends Activity {
 	Button buttonSupprBubbleTea		= null;
 	Button buttonAnnulerCommande	= null;
 	Button buttonValiderCommande 	= null;
+	Button buttonCB					= null;
 	
 	EditText editTextSodasJus 		= null;
 	EditText editTextCafeThe 		= null;
@@ -38,10 +40,11 @@ public class BarActivity extends Activity {
 	EditText editTextBubbleTea		= null;
 	EditText editTextTotal 			= null;
 	
-	TextView labelFoisPrixSodasJus = null;
-	TextView labelFoisPrixCafeThe = null;
-	TextView labelFoisPrixConfiserie = null;
-	TextView labelFoisPrixBubbleTea = null;
+	TextView labelFoisPrixSodasJus 		= null;
+	TextView labelFoisPrixCafeThe 		= null;
+	TextView labelFoisPrixConfiserie 	= null;
+	TextView labelFoisPrixBubbleTea 	= null;
+	
 	
 	//Variables
 	int nbreClicSodasJus;
@@ -113,6 +116,7 @@ public class BarActivity extends Activity {
         
         buttonAnnulerCommande.setOnClickListener(listenerButtonAnnulerCommande);
         buttonValiderCommande.setOnClickListener(listenerButtonValiderCommande);
+        
 	}
 	
 	private OnClickListener listenerButtonAjoutBar = new OnClickListener() {
@@ -184,14 +188,19 @@ public class BarActivity extends Activity {
 		
 		@Override
 		public void onClick(View v) {
+			//mise à 0 du champ Sodas/Jus
 			nbreClicSodasJus = 0;
 			editTextSodasJus.setText(""+nbreClicSodasJus);
+			//mise à 0 du champ Cafe/The
 			nbreClicCafeThe = 0;
 			editTextCafeThe.setText(""+nbreClicCafeThe);
+			//mise à 0 du champ Confiserie
 			nbreClicConfiserie = 0;
 			editTextConfiserie.setText(""+nbreClicConfiserie);
+			//mise à 0 du champ BubbleTea
 			nbreClicBubbleTea = 0;
 			editTextBubbleTea.setText(""+nbreClicBubbleTea);
+			//mise à 0 du champ Total
 			nbreTotal = 0;
 			editTextTotal.setText(""+nbreTotal);
 		}
@@ -201,34 +210,36 @@ public class BarActivity extends Activity {
 		
 		@Override
 		public void onClick(View v) {
-			AlertDialog.Builder boite;
-            boite = new AlertDialog.Builder(BarActivity.this);
-            boite.setTitle("Moyen de paiement");
-            boite.setIcon(R.drawable.ic_launcher);
-            boite.setMessage("Choisissez le moyen de paiement :");
-            
-            
-//            boite.setPositiveButton("CB", new DialogInterface.OnClickListener(){
-//                public void onClick(DialogInterface dialog, int which) {
-//               
-//                }
-//            });
-//            boite.setPositiveButton("Espèce", new DialogInterface.OnClickListener(){
-//                public void onClick(DialogInterface dialog, int which) {
-//               
-//                }
-//            });
-            
-            boite.show();
-            
-		}
+			creationAlertDialogMoyenDePaiement();
+	        }
 	};
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		//getMenuInflater().inflate(R.menu.bar, menu);
-		return true;
+	
+	public void creationAlertDialogMoyenDePaiement(){
+		
+		//On instancie notre layout en tant que View
+	    LayoutInflater layoutMoyenDePaiement = LayoutInflater.from(BarActivity.this);
+	    final View viewAlertDialogMoyenDePaiement 	= layoutMoyenDePaiement.inflate(R.layout.activity_moyen_de_paiement, null);
+		//Création de l'AlertDialog
+        AlertDialog.Builder alertDialogMoyenDePaiement = new AlertDialog.Builder(BarActivity.this);
+        //On affecte la vue personnalisé que l'on a crée à notre AlertDialog
+        alertDialogMoyenDePaiement.setView(viewAlertDialogMoyenDePaiement);
+        //On donne un titre à l'AlertDialog
+        alertDialogMoyenDePaiement.setTitle("Moyen de paiement");
+        //On modifie l'icône de l'AlertDialog pour le fun ;)
+        alertDialogMoyenDePaiement.setIcon(android.R.drawable.ic_dialog_alert);
+        alertDialogMoyenDePaiement.show();
+		
+        buttonCB = (Button)viewAlertDialogMoyenDePaiement.findViewById(R.id.idButtonCB);
+        // A terminer
 	}
+	
+	
+//	@Override
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//		// Inflate the menu; this adds items to the action bar if it is present.
+//		//getMenuInflater().inflate(R.menu.bar, menu);
+//		return true;
+//	}
 
 }
