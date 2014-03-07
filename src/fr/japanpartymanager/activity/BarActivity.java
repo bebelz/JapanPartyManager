@@ -3,6 +3,8 @@ package fr.japanpartymanager.activity;
 import fr.japanpartymanager.R;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.Gravity;
 import android.view.Menu;
@@ -110,6 +112,7 @@ public class BarActivity extends Activity {
         buttonSupprBubbleTea.setOnClickListener(listenerButtonSupprBar);
         
         buttonAnnulerCommande.setOnClickListener(listenerButtonAnnulerCommande);
+        buttonValiderCommande.setOnClickListener(listenerButtonValiderCommande);
 	}
 	
 	private OnClickListener listenerButtonAjoutBar = new OnClickListener() {
@@ -194,6 +197,32 @@ public class BarActivity extends Activity {
 		}
 	};
 	
+	private OnClickListener listenerButtonValiderCommande = new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			AlertDialog.Builder boite;
+            boite = new AlertDialog.Builder(BarActivity.this);
+            boite.setTitle("Moyen de paiement");
+            boite.setIcon(R.drawable.ic_launcher);
+            boite.setMessage("Choisissez le moyen de paiement :");
+            
+            
+//            boite.setPositiveButton("CB", new DialogInterface.OnClickListener(){
+//                public void onClick(DialogInterface dialog, int which) {
+//               
+//                }
+//            });
+//            boite.setPositiveButton("Espèce", new DialogInterface.OnClickListener(){
+//                public void onClick(DialogInterface dialog, int which) {
+//               
+//                }
+//            });
+            
+            boite.show();
+            
+		}
+	};
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
