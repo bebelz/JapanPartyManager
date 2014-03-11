@@ -41,6 +41,7 @@ public class BarActivity extends Activity {
 	TextView labelFoisPrixConfiserie 	= null;
 	TextView labelFoisPrixBubbleTea 	= null;
 	
+	AlertDialog alertDialog       = null;
 	
 	//Variables
 	int nbreClicSodasJus;
@@ -115,6 +116,24 @@ public class BarActivity extends Activity {
         
 	}
 	
+	private void resetCommande() {
+		//mise à 0 du champ Sodas/Jus
+		nbreClicSodasJus = 0;
+		editTextSodasJus.setText(""+nbreClicSodasJus);
+		//mise à 0 du champ Cafe/The
+		nbreClicCafeThe = 0;
+		editTextCafeThe.setText(""+nbreClicCafeThe);
+		//mise à 0 du champ Confiserie
+		nbreClicConfiserie = 0;
+		editTextConfiserie.setText(""+nbreClicConfiserie);
+		//mise à 0 du champ BubbleTea
+		nbreClicBubbleTea = 0;
+		editTextBubbleTea.setText(""+nbreClicBubbleTea);
+		//mise à 0 du champ Total
+		nbreTotal = 0;
+		editTextTotal.setText(""+nbreTotal);
+	}
+	
 	private OnClickListener listenerButtonAjoutBar = new OnClickListener() {
 		
 		@Override
@@ -184,21 +203,7 @@ public class BarActivity extends Activity {
 		
 		@Override
 		public void onClick(View v) {
-			//mise à 0 du champ Sodas/Jus
-			nbreClicSodasJus = 0;
-			editTextSodasJus.setText(""+nbreClicSodasJus);
-			//mise à 0 du champ Cafe/The
-			nbreClicCafeThe = 0;
-			editTextCafeThe.setText(""+nbreClicCafeThe);
-			//mise à 0 du champ Confiserie
-			nbreClicConfiserie = 0;
-			editTextConfiserie.setText(""+nbreClicConfiserie);
-			//mise à 0 du champ BubbleTea
-			nbreClicBubbleTea = 0;
-			editTextBubbleTea.setText(""+nbreClicBubbleTea);
-			//mise à 0 du champ Total
-			nbreTotal = 0;
-			editTextTotal.setText(""+nbreTotal);
+			resetCommande();
 		}
 	};
 	
@@ -226,7 +231,9 @@ public class BarActivity extends Activity {
         alertDialogMoyenDePaiement.setTitle("Moyen de paiement");
         //On modifie l'icône de l'AlertDialog pour le fun ;)
         alertDialogMoyenDePaiement.setIcon(android.R.drawable.ic_dialog_alert);
-        alertDialogMoyenDePaiement.show();
+        
+        alertDialog = alertDialogMoyenDePaiement.create();
+        alertDialog.show();
 		
         buttonCB = (Button) viewAlertDialogMoyenDePaiement.findViewById(R.id.idButtonCB);
         buttonEspece = (Button) viewAlertDialogMoyenDePaiement.findViewById(R.id.idButtonEspece);
@@ -241,8 +248,8 @@ public class BarActivity extends Activity {
 		
 		@Override
 		public void onClick(View v) {
+			/* On fixe le moyen de paiment selon le bouton choisi */
 			int modePaiment = 0;
-			
 			switch(v.getId()) {
 			case R.id.idButtonCB :
 				modePaiment = 0;
@@ -257,6 +264,7 @@ public class BarActivity extends Activity {
 				break;
 			}
 			
+			/* On stocke les données en base */
 			if(nbreClicSodasJus > 0) {
 				MainActivity.transacManager.venteProduit(0, nbreClicSodasJus, modePaiment);
 			}
@@ -272,6 +280,10 @@ public class BarActivity extends Activity {
 			if(nbreClicBubbleTea > 0) {
 				MainActivity.transacManager.venteProduit(3, nbreClicBubbleTea, modePaiment);
 			}
+			
+			/* On remet l'affichage à zéro et on ferme la fenêtre */
+			resetCommande();
+			alertDialog.cancel();
 	    }
 	};
 	

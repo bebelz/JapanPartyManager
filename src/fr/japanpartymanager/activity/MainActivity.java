@@ -30,6 +30,7 @@ public class MainActivity extends Activity {
         buttonBar.setOnClickListener(listenerMain);
         buttonEntree.setOnClickListener(listenerMain);
         
+        // On instancie l'objet qui va gérer la DB
         transacManager = new TransactionsManager(this);
     }
 
