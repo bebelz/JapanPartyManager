@@ -66,13 +66,13 @@ public class RestauActivity extends Activity {
 	int nbreClicEau;
 	double nbreTotal;
 
-	double prixSoda 	= MainActivity.transacManager.getPrixProduit(0);
+	double prixSoda 		= MainActivity.transacManager.getPrixProduit(0);
 	double prixCafeThe 		= MainActivity.transacManager.getPrixProduit(1);
 	double prixConfiserie 	= MainActivity.transacManager.getPrixProduit(2);
-	double prixMenu 	= MainActivity.transacManager.getPrixProduit(4);
-	double prixCrepe 	= MainActivity.transacManager.getPrixProduit(5);
+	double prixMenu 		= MainActivity.transacManager.getPrixProduit(4);
+	double prixCrepe 		= MainActivity.transacManager.getPrixProduit(5);
 	double prixPlat 		= MainActivity.transacManager.getPrixProduit(6);
-	double prixEau 	= MainActivity.transacManager.getPrixProduit(7);
+	double prixEau 			= MainActivity.transacManager.getPrixProduit(7);
 
 	//Initialisation de la vue
 	@Override
@@ -255,9 +255,9 @@ public class RestauActivity extends Activity {
 				break;
 			case R.id.buttonSupprSoda:
 				if(nbreClicSoda>0){
-					nbreClicPlat--;
+					nbreClicSoda--;
 				}
-				editTextSoda.setText(""+nbreClicPlat);
+				editTextSoda.setText(""+nbreClicSoda);
 				break;
 			case R.id.buttonSupprCafeThe :
 				if(nbreClicCafeThe >0){
