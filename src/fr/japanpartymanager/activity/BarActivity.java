@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 import fr.japanpartymanager.R;
 
 public class BarActivity extends Activity {
@@ -283,6 +284,7 @@ public class BarActivity extends Activity {
 			
 			/* On remet l'affichage à zéro et on ferme la fenêtre */
 			resetCommande();
+			Toast.makeText(getApplicationContext(), "Commande Enregistrée ! ", Toast.LENGTH_SHORT).show();
 			alertDialog.cancel();
 	    }
 	};
