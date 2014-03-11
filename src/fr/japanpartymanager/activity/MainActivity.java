@@ -1,5 +1,6 @@
 package fr.japanpartymanager.activity;
 
+import manager.TransactionsManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import fr.japanpartymanager.R;
 
 public class MainActivity extends Activity {
+	static TransactionsManager transacManager = null; // Va permettre de gérer toutes les requêtes DB dans l'appli
 	Button buttonRestau = null;
 	Button buttonBar = null;
 	Button buttonEntree = null;
@@ -27,6 +29,8 @@ public class MainActivity extends Activity {
         buttonRestau.setOnClickListener(listenerMain);
         buttonBar.setOnClickListener(listenerMain);
         buttonEntree.setOnClickListener(listenerMain);
+        
+        transacManager = new TransactionsManager(this);
     }
 
     private OnClickListener listenerMain = new OnClickListener() {

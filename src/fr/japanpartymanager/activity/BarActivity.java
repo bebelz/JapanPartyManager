@@ -1,22 +1,16 @@
 package fr.japanpartymanager.activity;
 
-import fr.japanpartymanager.R;
-import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.view.Gravity;
+import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.TextView;
+import fr.japanpartymanager.R;
 
 public class BarActivity extends Activity {
 
@@ -33,6 +27,8 @@ public class BarActivity extends Activity {
 	Button buttonAnnulerCommande	= null;
 	Button buttonValiderCommande 	= null;
 	Button buttonCB					= null;
+	Button buttonEspece             = null;
+	Button buttonTickets            = null;
 	
 	EditText editTextSodasJus 		= null;
 	EditText editTextCafeThe 		= null;
@@ -53,10 +49,10 @@ public class BarActivity extends Activity {
 	int nbreClicBubbleTea;
 	double nbreTotal;
 	
-	double prixSodasJus 	= 1.50;
-	double prixCafeThe 		= 1.00;
-	double prixConfiserie 	= 1.50;
-	double prixBubbleTea	= 2.50;
+	double prixSodasJus 	= MainActivity.transacManager.getPrixProduit(0);
+	double prixCafeThe 		= MainActivity.transacManager.getPrixProduit(1);
+	double prixConfiserie 	= MainActivity.transacManager.getPrixProduit(2);
+	double prixBubbleTea	= MainActivity.transacManager.getPrixProduit(3);
 
 	//Initialisation de la vue
 	@Override
@@ -211,9 +207,11 @@ public class BarActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			creationAlertDialogMoyenDePaiement();
-	        }
+	    }
 	};
 
+	
+	/* Choix modePaiment */
 	
 	public void creationAlertDialogMoyenDePaiement(){
 		
@@ -230,9 +228,52 @@ public class BarActivity extends Activity {
         alertDialogMoyenDePaiement.setIcon(android.R.drawable.ic_dialog_alert);
         alertDialogMoyenDePaiement.show();
 		
-        buttonCB = (Button)viewAlertDialogMoyenDePaiement.findViewById(R.id.idButtonCB);
-        // A terminer
+        buttonCB = (Button) viewAlertDialogMoyenDePaiement.findViewById(R.id.idButtonCB);
+        buttonEspece = (Button) viewAlertDialogMoyenDePaiement.findViewById(R.id.idButtonEspece);
+        buttonTickets = (Button) viewAlertDialogMoyenDePaiement.findViewById(R.id.idButtonTickets);
+        
+        buttonCB.setOnClickListener(listenerButtonChoixPaiment);
+        buttonEspece.setOnClickListener(listenerButtonChoixPaiment);
+        buttonTickets.setOnClickListener(listenerButtonChoixPaiment);
 	}
+	
+	private OnClickListener listenerButtonChoixPaiment = new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			int modePaiment = 0;
+			
+			switch(v.getId()) {
+			case R.id.idButtonCB :
+				modePaiment = 0;
+				break;
+				
+			case R.id.idButtonEspece :
+				modePaiment = 1;
+				break;
+				
+			case R.id.idButtonTickets :
+				modePaiment = 2;
+				break;
+			}
+			
+			if(nbreClicSodasJus > 0) {
+				MainActivity.transacManager.venteProduit(0, nbreClicSodasJus, modePaiment);
+			}
+			
+			if(nbreClicCafeThe > 0) {
+				MainActivity.transacManager.venteProduit(1, nbreClicCafeThe, modePaiment);
+			}
+			
+			if(nbreClicConfiserie > 0) {
+				MainActivity.transacManager.venteProduit(2, nbreClicConfiserie, modePaiment);
+			}
+			
+			if(nbreClicBubbleTea > 0) {
+				MainActivity.transacManager.venteProduit(3, nbreClicBubbleTea, modePaiment);
+			}
+	    }
+	};
 	
 	
 //	@Override

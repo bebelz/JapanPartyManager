@@ -14,6 +14,7 @@ public class SQLDatabase extends SQLiteOpenHelper {
     private static final String COL_ID = "ID";
     private static final String COL_ID_PRODUIT = "ID_PRODUIT";
     private static final String COL_QUANTITE = "QUANTITE";
+    private static final String COL_MODE_PAIEMENT = "MODE_PAIEMENT";
     private static final String COL_DATE = "DATE";
  
     private static final String CREATE_TABLE_TRANSACTIONS = "CREATE TABLE "
@@ -21,6 +22,7 @@ public class SQLDatabase extends SQLiteOpenHelper {
     		+ COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " 
             + COL_ID_PRODUIT+ " INTEGER NOT NULL, " 
             + COL_QUANTITE + " INTEGER NOT NULL, "
+            + COL_MODE_PAIEMENT + " INTEGER NOT NULL, "
             + COL_DATE + " TEXT NOT NULL);";
 
 	public SQLDatabase(Context context, String name, CursorFactory factory, int version) {

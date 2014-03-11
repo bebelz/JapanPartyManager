@@ -27,9 +27,9 @@ public class TransactionsManager {
 	 * @return l'id de la Transaction
 	 * @PostC Si return -1, erreur d'insertion !
 	 */
-	public long venteProduit(int id_produit, int quantite, int modePaiment) {
+	public long venteProduit(int id_produit, int quantite, int modePaiement) {
 		long toReturn;
-		Transaction toAdd = new Transaction(id_produit, quantite, modePaiment, System.currentTimeMillis()+""); // Cast en String pas beau
+		Transaction toAdd = new Transaction(id_produit, quantite, modePaiement, System.currentTimeMillis()+""); // Cast en String pas beau
 		
 		dbTransaction.open();
 		toReturn = dbTransaction.insertTransaction(toAdd);
@@ -101,5 +101,9 @@ public class TransactionsManager {
 		dbTransaction.close();
 		
 		return toReturn;
+	}
+	
+	public float getPrixProduit(int id_produit) {
+		return produits.getPrixProduit(id_produit);
 	}
 }

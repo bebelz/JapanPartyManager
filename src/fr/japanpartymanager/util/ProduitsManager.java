@@ -16,8 +16,10 @@ public class ProduitsManager {
 		listeProduits = new ArrayList<Float>();
 		
 		/* Les Produits */
-		listeProduits.add((float) 0.5); // Produit a 50cts ayant l'id 0
-		listeProduits.add((float) 1);  // Produit a 1€ ayant l'id 1
+		listeProduits.add((float) 1.5); // SodaJus ; id = 0
+		listeProduits.add((float) 1);  // CaféThé ; id = 1
+		listeProduits.add((float) 1.5); // Confiserie ; id =2
+		listeProduits.add((float) 2.5); // BubbleTea ; id = 3
 	}
 	
 	/**

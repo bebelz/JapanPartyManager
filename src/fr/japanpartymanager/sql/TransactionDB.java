@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 public class TransactionDB {
 	private static final int VERSION_DB = 1; // ATTENTION : Changer ce chiffre vide la base !
 	
-    private static final String NOM_DB = "transactions.db";
+    private static final String NOM_DB = "mesTransactions.db";
     private static final String TABLE_TRANSACTIONS = "table_transactions";
     
     private static final String COL_ID = "ID";
@@ -20,12 +20,12 @@ public class TransactionDB {
     private static final int NUM_COL_ID_PRODUIT = 1;
     private static final String COL_QUANTITE = "QUANTITE";
     private static final int NUM_COL_QUANTITE = 2;
-    private static final String COL_MODE_PAIMENT = "MODE_PAIMENT";
-    private static final int NUM_COL_MODE_PAIMENT = 3;
+    private static final String COL_MODE_PAIEMENT = "MODE_PAIEMENT";
+    private static final int NUM_COL_MODE_PAIEMENT = 3;
     private static final String COL_DATE = "DATE";
     private static final int NUM_COL_DATE = 4;
     
-    private final String[] allCollumns = new String[] {COL_ID, COL_ID_PRODUIT, COL_QUANTITE, COL_MODE_PAIMENT, COL_DATE};
+    private final String[] allCollumns = new String[] {COL_ID, COL_ID_PRODUIT, COL_QUANTITE, COL_MODE_PAIEMENT, COL_DATE};
     
     private SQLiteDatabase db; // Pointeur vers la base
  
@@ -63,7 +63,7 @@ public class TransactionDB {
         // On rempli l'objet que l'on va entrer en base
         values.put(COL_ID_PRODUIT, transaction.getId_produit());
         values.put(COL_QUANTITE, transaction.getQuantite());
-        values.put(COL_MODE_PAIMENT, transaction.getModePaiment());
+        values.put(COL_MODE_PAIEMENT, transaction.getModePaiement());
         values.put(COL_DATE, transaction.getDate().toString());
  
         return db.insert(TABLE_TRANSACTIONS, null, values);
@@ -139,7 +139,7 @@ public class TransactionDB {
 		toReturn.setId(c.getInt(NUM_COL_ID));
 		toReturn.setId_produit(c.getInt(NUM_COL_ID_PRODUIT));
 		toReturn.setQuantite(c.getInt(NUM_COL_QUANTITE));
-		toReturn.setModePaiment(c.getInt(NUM_COL_MODE_PAIMENT));
+		toReturn.setModePaiement(c.getInt(NUM_COL_MODE_PAIEMENT));
 		toReturn.setDate(c.getString(NUM_COL_DATE));
  
 		//On retourne le livre
