@@ -16,26 +16,27 @@
         android:orientation="horizontal" >
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.50"
+            android:layout_weight="1"
             android:orientation="vertical" >
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="157dp"
-                android:layout_weight="0.09"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:orientation="horizontal" >
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:orientation="vertical" >
 
                     <ImageButton
                         android:id="@+id/imageButtonSodasJus"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
                         android:src="@drawable/logo_canette_ok" />
 
                     <TextView
@@ -48,15 +49,15 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:orientation="vertical" >
 
                     <ImageButton
                         android:id="@+id/imageButtonBubbleTea"
                         android:layout_width="match_parent"
-                        android:layout_height="125dp"
+                        android:layout_height="150dp"
                         android:scaleType="center"
                         android:src="@drawable/bubbletea" />
 
@@ -73,20 +74,19 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.33" >
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:orientation="vertical" >
 
                     <ImageButton
                         android:id="@+id/imageButtonCafeThe"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
                         android:src="@drawable/cafe" />
 
                     <TextView
@@ -97,22 +97,16 @@
                         android:textAppearance="?android:attr/textAppearanceLarge" />
                 </LinearLayout>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.33" >
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:orientation="vertical" >
 
                     <ImageButton
                         android:id="@+id/imageButtonConfiserie"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
                         android:src="@drawable/mars" />
 
                     <TextView
@@ -121,21 +115,20 @@
                         android:layout_height="wrap_content"
                         android:text="Confiserie"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
-
                 </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="289dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="50dp"
-            android:layout_weight="0.24" >
+            android:layout_marginLeft="20dp"
+            android:layout_weight="0.8" >
 
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1.39" >
+                android:layout_height="match_parent" >
 
                 <TableRow
                     android:id="@+id/tableRowEnTete"
@@ -153,7 +146,7 @@
 
                 <TableRow
                     android:id="@+id/tableRowCanettes"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.05" >
 
@@ -195,7 +188,7 @@
 
                 <TableRow
                     android:id="@+id/tableRowBouteilles"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.05" >
 
@@ -235,7 +228,7 @@
 
                 <TableRow
                     android:id="@+id/tableRowEau"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.05" >
 
@@ -250,9 +243,9 @@
                         android:id="@+id/editTextTotalConfiserie"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:inputType="number" 
+                        android:cursorVisible="false"
                         android:editable="false"
-						android:cursorVisible="false"/>
+                        android:inputType="number" />
 
                     <TextView
                         android:id="@+id/labelFoisPrixConfiserie"
@@ -270,13 +263,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:text="Suppr" />
-
                 </TableRow>
 
                 <TableRow
                     android:id="@+id/tableRow2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="0.05" >
 
                     <TextView
@@ -312,7 +304,7 @@
 
                 <TableRow
                     android:id="@+id/tableRowTotal"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.10" >
 
@@ -345,7 +337,7 @@
 
                 <TableRow
                     android:id="@+id/tableRowCommanderAnnuler"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.15" >
 
@@ -361,7 +353,7 @@
                         android:id="@+id/buttonAnnulerCommande"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|right"
+                        android:layout_gravity="bottom"
                         android:layout_weight="0.3"
                         android:text="Annuler" />
 
