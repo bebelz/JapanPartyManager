@@ -11,19 +11,29 @@ public class Transaction {
 	private int id;
 	private int id_produit;
 	private int quantite;
+	private int modePaiment;
 	private String date;
 	
 	public Transaction() {
 		super();
 	}
 	
-	public Transaction(int id_produit, int quantite, String date) {
+	public Transaction(int id_produit, int quantite, int modePaiment, String date) {
 		super();
 		this.id_produit = id_produit;
 		this.quantite = quantite;
+		this.modePaiment = modePaiment;
 		this.date = date;
 	}
 
+
+	public int getModePaiment() {
+		return modePaiment;
+	}
+
+	public void setModePaiment(int modePaiment) {
+		this.modePaiment = modePaiment;
+	}
 
 	public int getId() {
 		return id;
@@ -65,6 +75,6 @@ public class Transaction {
 	}
 	
 	public String toString() {
-		return "[PRODUIT] : " + id_produit + " ; " + "[QUANTITE] : " + quantite + " ; " + "[DATE] : " + date.toString(); 
+		return "[PRODUIT] : " + id_produit + " ; " + "[QUANTITE] : " + quantite + " ; " + "[MODE DE PAIMENT]  : " + modePaiment + " ; " + "[DATE] : " + date.toString(); 
 	}
 }
