@@ -11,7 +11,7 @@ public class Transaction {
 	private int id;
 	private int id_produit;
 	private int quantite;
-	private int modePaiement; // 0 pour CB, 1 pour espèces et 2 pour tickets
+	private int modePaiement; // 0 pour CB, 1 pour espèces, 2 pour tickets et 3 pour chèques
 	private String date;
 	
 	public Transaction() {

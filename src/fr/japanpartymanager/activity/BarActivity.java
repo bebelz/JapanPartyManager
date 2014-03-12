@@ -20,27 +20,38 @@ public class BarActivity extends Activity {
 	ImageButton buttonCafeThe		= null;
 	ImageButton buttonConfiserie	= null;
 	ImageButton buttonBubbleTea 	= null;
+	ImageButton buttonTicketBoisson = null;
+	ImageButton buttonTicketRepas   = null;
 	
 	Button buttonSupprSodasJus 		= null;
 	Button buttonSupprCafeThe 		= null;
 	Button buttonSupprConfiserie 	= null;
 	Button buttonSupprBubbleTea		= null;
+	Button buttonSupprTicketBoisson = null;
+	Button buttonSupprTicketRepas   = null;
+	
 	Button buttonAnnulerCommande	= null;
 	Button buttonValiderCommande 	= null;
+	
 	Button buttonCB					= null;
 	Button buttonEspece             = null;
 	Button buttonTickets            = null;
+	Button buttonCheque             = null;
 	
 	EditText editTextSodasJus 		= null;
 	EditText editTextCafeThe 		= null;
 	EditText editTextConfiserie		= null;
 	EditText editTextBubbleTea		= null;
+	EditText editTextTicketBoisson  = null;
+	EditText editTextTicketRepas    = null;
 	EditText editTextTotal 			= null;
 	
 	TextView labelFoisPrixSodasJus 		= null;
 	TextView labelFoisPrixCafeThe 		= null;
 	TextView labelFoisPrixConfiserie 	= null;
 	TextView labelFoisPrixBubbleTea 	= null;
+	TextView labelFoisPrixTicketBoisson = null;
+	TextView labelFoisPrixTicketRepas   = null;
 	
 	AlertDialog alertDialog       = null;
 	
@@ -49,12 +60,16 @@ public class BarActivity extends Activity {
 	int nbreClicCafeThe;
 	int nbreClicConfiserie;
 	int nbreClicBubbleTea;
+	int nbreClicTicketBoisson;
+	int nbreClicTicketRepas;
 	double nbreTotal;
 	
-	double prixSodasJus 	= MainActivity.transacManager.getPrixProduit(0);
-	double prixCafeThe 		= MainActivity.transacManager.getPrixProduit(1);
-	double prixConfiserie 	= MainActivity.transacManager.getPrixProduit(2);
-	double prixBubbleTea	= MainActivity.transacManager.getPrixProduit(3);
+	double prixSodasJus 	 = MainActivity.transacManager.getPrixProduit(0);
+	double prixCafeThe 		 = MainActivity.transacManager.getPrixProduit(1);
+	double prixConfiserie 	 = MainActivity.transacManager.getPrixProduit(2);
+	double prixBubbleTea	 = MainActivity.transacManager.getPrixProduit(3);
+	double prixTicketBoisson = MainActivity.transacManager.getPrixProduit(8);
+	double prixTicketRepas   = MainActivity.transacManager.getPrixProduit(9);
 
 	//Initialisation de la vue
 	@Override
@@ -68,11 +83,15 @@ public class BarActivity extends Activity {
         buttonCafeThe 			= (ImageButton)findViewById(R.id.imageButtonCafeThe);
         buttonConfiserie 		= (ImageButton) findViewById(R.id.imageButtonConfiserie);
         buttonBubbleTea 		= (ImageButton) findViewById(R.id.imageButtonBubbleTea);
+        buttonTicketBoisson     = (ImageButton) findViewById(R.id.imageButtonTicketBoissonBar);
+        buttonTicketRepas       = (ImageButton) findViewById(R.id.imageButtonTicketRepasBar);
         
-        buttonSupprSodasJus 	= (Button)findViewById(R.id.buttonSupprSodasJus);
-        buttonSupprCafeThe		= (Button)findViewById(R.id.buttonSupprCafeThe);
-        buttonSupprConfiserie 	= (Button)findViewById(R.id.buttonSupprConfiserie);
-        buttonSupprBubbleTea 	= (Button)findViewById(R.id.buttonSupprBubbleTea);
+        buttonSupprSodasJus 	 = (Button)findViewById(R.id.buttonSupprSodasJus);
+        buttonSupprCafeThe		 = (Button)findViewById(R.id.buttonSupprCafeThe);
+        buttonSupprConfiserie 	 = (Button)findViewById(R.id.buttonSupprConfiserie);
+        buttonSupprBubbleTea 	 = (Button)findViewById(R.id.buttonSupprBubbleTea);
+        buttonSupprTicketBoisson = (Button)findViewById(R.id.buttonSupprTicketBoisson);
+        buttonSupprTicketRepas   = (Button)findViewById(R.id.buttonSupprTicketRepas);
         
         buttonAnnulerCommande	= (Button)findViewById(R.id.buttonAnnulerCommande);
         buttonValiderCommande	= (Button)findViewById(R.id.buttonValiderCommande);
@@ -81,6 +100,8 @@ public class BarActivity extends Activity {
         editTextCafeThe 		= (EditText)findViewById(R.id.editTextTotalCafeThe);
         editTextConfiserie 		= (EditText)findViewById(R.id.editTextTotalConfiserie);
         editTextBubbleTea		= (EditText)findViewById(R.id.editTextTotalBubbleTea);
+        editTextTicketBoisson   = (EditText)findViewById(R.id.editTextTotalTicketBoisson);
+        editTextTicketRepas     = (EditText)findViewById(R.id.editTextTotalTicketRepas);
         editTextTotal 			= (EditText)findViewById(R.id.editTextTotal);
         
         labelFoisPrixSodasJus = (TextView)findViewById(R.id.labelFoisPrixSodasJus);
@@ -95,26 +116,37 @@ public class BarActivity extends Activity {
         labelFoisPrixBubbleTea = (TextView)findViewById(R.id.labelFoisPrixBubbleTea);
         labelFoisPrixBubbleTea.setText("x "+prixBubbleTea+"€");
         
-        nbreClicSodasJus 	= 0;
-        nbreClicCafeThe 	= 0;
-        nbreClicConfiserie 	= 0;
-        nbreClicBubbleTea 	= 0;
-        nbreTotal			= 0;
+        labelFoisPrixTicketBoisson = (TextView)findViewById(R.id.labelFoisPrixTicketBoisson);
+        labelFoisPrixTicketBoisson.setText("x "+prixTicketBoisson+"€");
+        
+        labelFoisPrixTicketRepas = (TextView)findViewById(R.id.labelFoisPrixTicketRepas);
+        labelFoisPrixTicketRepas.setText("x "+prixTicketRepas+"€");
+        
+        nbreClicSodasJus 	  = 0;
+        nbreClicCafeThe 	  = 0;
+        nbreClicConfiserie 	  = 0;
+        nbreClicBubbleTea 	  = 0;
+        nbreClicTicketBoisson = 0;
+        nbreClicTicketRepas   = 0;
+        nbreTotal			  = 0;
         
         buttonSodasJus.setOnClickListener(listenerButtonAjoutBar);
         buttonCafeThe.setOnClickListener(listenerButtonAjoutBar);
         buttonConfiserie.setOnClickListener(listenerButtonAjoutBar);
         buttonBubbleTea.setOnClickListener(listenerButtonAjoutBar);
+        buttonTicketBoisson.setOnClickListener(listenerButtonAjoutBar);
+        buttonTicketRepas.setOnClickListener(listenerButtonAjoutBar);
         
         
         buttonSupprSodasJus.setOnClickListener(listenerButtonSupprBar);
         buttonSupprCafeThe.setOnClickListener(listenerButtonSupprBar);
         buttonSupprConfiserie.setOnClickListener(listenerButtonSupprBar);
         buttonSupprBubbleTea.setOnClickListener(listenerButtonSupprBar);
+        buttonSupprTicketBoisson.setOnClickListener(listenerButtonSupprBar);
+        buttonSupprTicketRepas.setOnClickListener(listenerButtonSupprBar);
         
         buttonAnnulerCommande.setOnClickListener(listenerButtonAnnulerCommande);
         buttonValiderCommande.setOnClickListener(listenerButtonValiderCommande);
-        
 	}
 	
 	private void resetCommande() {
@@ -130,6 +162,12 @@ public class BarActivity extends Activity {
 		//mise à 0 du champ BubbleTea
 		nbreClicBubbleTea = 0;
 		editTextBubbleTea.setText(""+nbreClicBubbleTea);
+		//
+		nbreClicTicketBoisson = 0;
+		editTextTicketBoisson.setText(""+nbreClicTicketBoisson);
+		//
+		nbreClicTicketRepas = 0;
+		editTextTicketRepas.setText(""+nbreClicTicketRepas);
 		//mise à 0 du champ Total
 		nbreTotal = 0;
 		editTextTotal.setText(""+nbreTotal);
@@ -155,11 +193,19 @@ public class BarActivity extends Activity {
 			case R.id.imageButtonBubbleTea:
 				nbreClicBubbleTea++;
 				editTextBubbleTea.setText(""+nbreClicBubbleTea);
-				
+				break;
+			case R.id.imageButtonTicketBoissonBar:
+				nbreClicTicketBoisson++;
+				editTextTicketBoisson.setText(""+nbreClicTicketBoisson);
+				break;
+			case R.id.imageButtonTicketRepasBar:
+				nbreClicTicketRepas++;
+				editTextTicketRepas.setText(""+nbreClicTicketRepas);
 				break;
 			}
 			nbreTotal = (nbreClicSodasJus*prixSodasJus)+(nbreClicCafeThe*prixCafeThe)
-					+(nbreClicConfiserie*prixConfiserie)+(nbreClicBubbleTea*prixBubbleTea);
+					+(nbreClicConfiserie*prixConfiserie)+(nbreClicBubbleTea*prixBubbleTea)
+					+(nbreClicTicketBoisson*prixTicketBoisson)+(nbreClicTicketRepas*prixTicketRepas);
 			editTextTotal.setText(""+nbreTotal);
 		}
 	};
@@ -193,9 +239,22 @@ public class BarActivity extends Activity {
 				}
 				editTextBubbleTea.setText(""+nbreClicBubbleTea);
 				break;
-			}
+			case R.id.buttonSupprTicketBoisson:
+				if(nbreClicTicketBoisson>0){
+					nbreClicTicketBoisson--;
+				}
+				editTextTicketBoisson.setText(""+nbreClicTicketBoisson);
+				break;
+			case R.id.buttonSupprTicketRepas:
+				if(nbreClicTicketRepas>0){
+					nbreClicTicketRepas--;
+				}
+				editTextTicketRepas.setText(""+nbreClicTicketRepas);
+				break;
+		}
 			nbreTotal = (nbreClicSodasJus*prixSodasJus)+(nbreClicCafeThe*prixCafeThe)
-					+(nbreClicConfiserie*prixConfiserie)+(nbreClicBubbleTea*prixBubbleTea);
+					+(nbreClicConfiserie*prixConfiserie)+(nbreClicBubbleTea*prixBubbleTea)
+					+(nbreClicTicketBoisson*prixTicketBoisson)+(nbreClicTicketRepas*prixTicketRepas);
 			editTextTotal.setText(""+nbreTotal);
 		}
 	};
@@ -239,10 +298,12 @@ public class BarActivity extends Activity {
         buttonCB = (Button) viewAlertDialogMoyenDePaiement.findViewById(R.id.idButtonCB);
         buttonEspece = (Button) viewAlertDialogMoyenDePaiement.findViewById(R.id.idButtonEspece);
         buttonTickets = (Button) viewAlertDialogMoyenDePaiement.findViewById(R.id.idButtonTickets);
+        buttonCheque = (Button) viewAlertDialogMoyenDePaiement.findViewById(R.id.idButtonCheque);
         
         buttonCB.setOnClickListener(listenerButtonChoixPaiment);
         buttonEspece.setOnClickListener(listenerButtonChoixPaiment);
         buttonTickets.setOnClickListener(listenerButtonChoixPaiment);
+        buttonCheque.setOnClickListener(listenerButtonChoixPaiment);
 	}
 	
 	private OnClickListener listenerButtonChoixPaiment = new OnClickListener() {
@@ -263,6 +324,10 @@ public class BarActivity extends Activity {
 			case R.id.idButtonTickets :
 				modePaiment = 2;
 				break;
+				
+			case R.id.idButtonCheque :
+				modePaiment = 3;
+				break;
 			}
 			
 			/* On stocke les données en base */
@@ -282,19 +347,18 @@ public class BarActivity extends Activity {
 				MainActivity.transacManager.venteProduit(3, nbreClicBubbleTea, modePaiment);
 			}
 			
+			if(nbreClicTicketBoisson > 0) {
+				MainActivity.transacManager.venteProduit(8, nbreClicTicketBoisson, modePaiment);
+			}
+			
+			if(nbreClicTicketRepas > 0) {
+				MainActivity.transacManager.venteProduit(9, nbreClicTicketRepas, modePaiment);
+			}
+			
 			/* On remet l'affichage à zéro et on ferme la fenêtre */
 			resetCommande();
 			Toast.makeText(getApplicationContext(), "Commande Enregistrée ! ", Toast.LENGTH_SHORT).show();
 			alertDialog.cancel();
 	    }
 	};
-	
-	
-//	@Override
-//	public boolean onCreateOptionsMenu(Menu menu) {
-//		// Inflate the menu; this adds items to the action bar if it is present.
-//		//getMenuInflater().inflate(R.menu.bar, menu);
-//		return true;
-//	}
-
 }
