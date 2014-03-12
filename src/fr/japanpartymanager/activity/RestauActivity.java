@@ -1,78 +1,81 @@
 package fr.japanpartymanager.activity;
 
-import fr.japanpartymanager.R;
-import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
+import fr.japanpartymanager.R;
 
 public class RestauActivity extends Activity {
 
 	//Déclaration des objets
-	ImageButton buttonMenu 			= null;
 	ImageButton buttonCrepe			= null;
 	ImageButton buttonPlat			= null;
 	ImageButton buttonSoda 			= null;
 	ImageButton buttonCafeThe		= null;
 	ImageButton buttonConfiserie 	= null;
-	ImageButton buttonEau 			= null;
+	ImageButton buttonTicketBoisson = null;
+	ImageButton buttonTicketRepas   = null;
 
-	Button buttonSupprMenu	 		= null;
 	Button buttonSupprCrepe 		= null;
 	Button buttonSupprPlat		 	= null;
 	Button buttonSupprSoda			= null;
 	Button buttonSupprCafeThe 		= null;
 	Button buttonSupprConfiserie	= null;
-	Button buttonSupprEau			= null;
+	Button buttonSupprTicketBoisson = null;
+	Button buttonSupprTicketRepas   = null;
+	
 	Button buttonAnnulerCommande	= null;
 	Button buttonValiderCommande 	= null;
+	
 	Button buttonCB					= null;
 	Button buttonEspece             = null;
 	Button buttonTickets            = null;
+	Button buttonCheque             = null;
 
-	EditText editTextMenu			= null;
 	EditText editTextCrepe 			= null;
 	EditText editTextPlat			= null;
 	EditText editTextSoda			= null;
 	EditText editTextCafeThe		= null;
 	EditText editTextConfiserie		= null;
-	EditText editTextEau			= null;
+	EditText editTextTicketBoisson  = null;
+	EditText editTextTicketRepas    = null;
 	EditText editTextTotal			= null;
 
-	TextView labelFoisPrixMenu 		= null;
-	TextView labelFoisPrixCrepe		= null;
-	TextView labelFoisPrixPlat		= null;
-	TextView labelFoisPrixSoda 		= null;
-	TextView labelFoisPrixCafeThe	= null;
-	TextView labelFoisPrixConfiserie= null;
-	TextView labelFoisPrixEau 		= null;
+	TextView labelFoisPrixCrepe		    = null;
+	TextView labelFoisPrixPlat		    = null;
+	TextView labelFoisPrixSoda 		    = null;
+	TextView labelFoisPrixCafeThe	    = null;
+	TextView labelFoisPrixConfiserie    = null;
+	TextView labelFoisPrixTicketBoisson = null;
+	TextView labelFoisPrixTicketRepas   = null;
 
 	AlertDialog alertDialog       	= null;
 
 	//Variables
-	int nbreClicMenu;
 	int nbreClicCrepe;
 	int nbreClicPlat;
 	int nbreClicSoda;
 	int nbreClicCafeThe;
 	int nbreClicConfiserie;
-	int nbreClicEau;
+	int nbreClicTicketBoisson;
+	int nbreClicTicketRepas;
 	double nbreTotal;
 
-	double prixSoda 		= MainActivity.transacManager.getPrixProduit(0);
-	double prixCafeThe 		= MainActivity.transacManager.getPrixProduit(1);
-	double prixConfiserie 	= MainActivity.transacManager.getPrixProduit(2);
-	double prixMenu 		= MainActivity.transacManager.getPrixProduit(4);
-	double prixCrepe 		= MainActivity.transacManager.getPrixProduit(5);
-	double prixPlat 		= MainActivity.transacManager.getPrixProduit(6);
-	double prixEau 			= MainActivity.transacManager.getPrixProduit(7);
+	double prixSoda 		 = MainActivity.transacManager.getPrixProduit(0);
+	double prixCafeThe 		 = MainActivity.transacManager.getPrixProduit(1);
+	double prixConfiserie 	 = MainActivity.transacManager.getPrixProduit(2);
+	double prixCrepe 		 = MainActivity.transacManager.getPrixProduit(5);
+	double prixPlat 		 = MainActivity.transacManager.getPrixProduit(6);
+	double prixTicketBoisson = MainActivity.transacManager.getPrixProduit(8);
+	double prixTicketRepas   = MainActivity.transacManager.getPrixProduit(9);
 
 	//Initialisation de la vue
 	@Override
@@ -81,36 +84,33 @@ public class RestauActivity extends Activity {
 		setContentView(R.layout.activity_restau);
 		setTitle("Restauration");
 
-		buttonMenu 				= (ImageButton)findViewById(R.id.imageButtonMenu);
 		buttonCrepe 			= (ImageButton)findViewById(R.id.imageButtonCrepe);
 		buttonPlat 				= (ImageButton)findViewById(R.id.imageButtonPlat);
 		buttonSoda				= (ImageButton)findViewById(R.id.imageButtonSoda);
 		buttonCafeThe 			= (ImageButton)findViewById(R.id.imageButtonCafeThe);
-		buttonConfiserie 		= (ImageButton) findViewById(R.id.imageButtonConfiserie);
-		buttonEau 				= (ImageButton) findViewById(R.id.imageButtonEau);
+		buttonConfiserie 		= (ImageButton)findViewById(R.id.imageButtonConfiserie);
+		buttonTicketBoisson     = (ImageButton)findViewById(R.id.imageButtonTicketBoissonRestau);
+		buttonTicketRepas       = (ImageButton)findViewById(R.id.imageButtonTicketRepasRestau);
 
-		buttonSupprMenu 		= (Button)findViewById(R.id.buttonSupprMenu);
-		buttonSupprCrepe		= (Button)findViewById(R.id.buttonSupprCrepe);
-		buttonSupprPlat 		= (Button)findViewById(R.id.buttonSupprPlat);
-		buttonSupprSoda 		= (Button)findViewById(R.id.buttonSupprSoda);
-		buttonSupprCafeThe		= (Button)findViewById(R.id.buttonSupprCafeThe);
-		buttonSupprConfiserie	= (Button)findViewById(R.id.buttonSupprConfiserie);
-		buttonSupprEau 			= (Button)findViewById(R.id.buttonSupprEau);
+		buttonSupprCrepe		 = (Button)findViewById(R.id.buttonSupprCrepe);
+		buttonSupprPlat 		 = (Button)findViewById(R.id.buttonSupprPlat);
+		buttonSupprSoda 		 = (Button)findViewById(R.id.buttonSupprSoda);
+		buttonSupprCafeThe		 = (Button)findViewById(R.id.buttonSupprCafeThe);
+		buttonSupprConfiserie	 = (Button)findViewById(R.id.buttonSupprConfiserie);
+		buttonSupprTicketBoisson = (Button)findViewById(R.id.buttonSupprTicketBoissonRestau);
+		buttonSupprTicketRepas   = (Button)findViewById(R.id.buttonSupprTicketRepasRestau);
 
 		buttonAnnulerCommande	= (Button)findViewById(R.id.buttonAnnulerCommande);
 		buttonValiderCommande	= (Button)findViewById(R.id.buttonValiderCommande);
 
-		editTextMenu			= (EditText)findViewById(R.id.editTextTotalMenu);
 		editTextCrepe 			= (EditText)findViewById(R.id.editTextTotalCrepe);
 		editTextPlat 			= (EditText)findViewById(R.id.editTextTotalPlat);
 		editTextSoda			= (EditText)findViewById(R.id.editTextTotalSoda);
 		editTextCafeThe 		= (EditText)findViewById(R.id.editTextTotalCafeThe);
 		editTextConfiserie 		= (EditText)findViewById(R.id.editTextTotalConfiserie);
-		editTextEau				= (EditText)findViewById(R.id.editTextTotalEau);
+		editTextTicketBoisson   = (EditText)findViewById(R.id.editTextTotalTicketBoissonRestau);
+		editTextTicketRepas     = (EditText)findViewById(R.id.editTextTotalTicketRepasRestau);
 		editTextTotal 			= (EditText)findViewById(R.id.editTextTotal);
-
-		labelFoisPrixMenu = (TextView)findViewById(R.id.labelFoisPrixMenu);
-		labelFoisPrixMenu.setText("x "+prixMenu+"€");
 
 		labelFoisPrixCrepe = (TextView)findViewById(R.id.labelFoisPrixCrepe);
 		labelFoisPrixCrepe.setText("x "+prixCrepe+"€");
@@ -127,35 +127,36 @@ public class RestauActivity extends Activity {
 		labelFoisPrixConfiserie = (TextView)findViewById(R.id.labelFoisPrixConfiserie);
 		labelFoisPrixConfiserie.setText("x "+prixConfiserie+"€");
 
-		labelFoisPrixEau = (TextView)findViewById(R.id.labelFoisPrixEau);
-		labelFoisPrixEau.setText("x "+prixEau+"€");
+		labelFoisPrixTicketBoisson = (TextView)findViewById(R.id.labelFoisPrixTicketBoissonRestau);
+		labelFoisPrixTicketBoisson.setText("x "+prixTicketBoisson+"€");
+		
+		labelFoisPrixTicketRepas = (TextView)findViewById(R.id.labelFoisPrixTicketRepasRestau);
+		labelFoisPrixTicketRepas.setText("x "+prixTicketRepas+"€");
+		
+		nbreClicCrepe 		  = 0;
+		nbreClicPlat 		  = 0;
+		nbreClicSoda 		  = 0;
+		nbreClicCafeThe 	  = 0;
+		nbreClicConfiserie 	  = 0;
+		nbreClicTicketBoisson = 0;
+		nbreClicTicketRepas   = 0;
+		nbreTotal			  = 0;
 
-		nbreClicMenu 		= 0;
-		nbreClicCrepe 		= 0;
-		nbreClicPlat 		= 0;
-		nbreClicSoda 		= 0;
-		nbreClicCafeThe 	= 0;
-		nbreClicConfiserie 	= 0;
-		nbreClicEau 		= 0;
-		nbreTotal			= 0;
-
-
-		buttonMenu.setOnClickListener(listenerButtonAjoutResto);
 		buttonCrepe.setOnClickListener(listenerButtonAjoutResto);
 		buttonPlat.setOnClickListener(listenerButtonAjoutResto);
 		buttonSoda.setOnClickListener(listenerButtonAjoutResto);
 		buttonCafeThe.setOnClickListener(listenerButtonAjoutResto);
 		buttonConfiserie.setOnClickListener(listenerButtonAjoutResto);
-		buttonEau.setOnClickListener(listenerButtonAjoutResto);
+		buttonTicketBoisson.setOnClickListener(listenerButtonAjoutResto);
+		buttonTicketRepas.setOnClickListener(listenerButtonAjoutResto);
 
-
-		buttonSupprMenu.setOnClickListener(listenerButtonSupprResto);
 		buttonSupprCrepe.setOnClickListener(listenerButtonSupprResto);
 		buttonSupprPlat.setOnClickListener(listenerButtonSupprResto);
 		buttonSupprSoda.setOnClickListener(listenerButtonSupprResto);
 		buttonSupprCafeThe.setOnClickListener(listenerButtonSupprResto);
 		buttonSupprConfiserie.setOnClickListener(listenerButtonSupprResto);
-		buttonSupprEau.setOnClickListener(listenerButtonSupprResto);
+		buttonSupprTicketBoisson.setOnClickListener(listenerButtonSupprResto);
+		buttonSupprTicketRepas.setOnClickListener(listenerButtonSupprResto);
 
 		buttonAnnulerCommande.setOnClickListener(listenerButtonAnnulerCommande);
 		buttonValiderCommande.setOnClickListener(listenerButtonValiderCommande);
@@ -163,9 +164,6 @@ public class RestauActivity extends Activity {
 	}
 
 	private void resetCommande() {
-		nbreClicMenu = 0;
-		editTextMenu.setText(""+nbreClicMenu);
-
 		nbreClicCrepe = 0;
 		editTextCrepe.setText(""+nbreClicCrepe);
 
@@ -181,8 +179,11 @@ public class RestauActivity extends Activity {
 		nbreClicConfiserie = 0;
 		editTextConfiserie.setText(""+nbreClicConfiserie);
 
-		nbreClicEau = 0;
-		editTextEau.setText(""+nbreClicEau);
+		nbreClicTicketBoisson = 0;
+		editTextTicketBoisson.setText(""+nbreClicTicketBoisson);
+		
+		nbreClicTicketRepas = 0;
+		editTextTicketRepas.setText(""+nbreClicTicketRepas);
 
 		nbreTotal = 0;
 		editTextTotal.setText(""+nbreTotal);
@@ -193,10 +194,6 @@ public class RestauActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			switch(v.getId()) {
-			case R.id.imageButtonMenu :
-				nbreClicMenu++;
-				editTextMenu.setText(""+nbreClicMenu);
-				break;
 			case R.id.imageButtonCrepe :
 				nbreClicCrepe++;
 				editTextCrepe.setText(""+nbreClicCrepe);
@@ -217,15 +214,18 @@ public class RestauActivity extends Activity {
 				nbreClicConfiserie++;
 				editTextConfiserie.setText(""+nbreClicConfiserie);
 				break;
-			case R.id.imageButtonEau:
-				nbreClicEau++;
-				editTextEau.setText(""+nbreClicEau);
+			case R.id.imageButtonTicketBoissonRestau:
+				nbreClicTicketBoisson++;
+				editTextTicketBoisson.setText(""+nbreClicTicketBoisson);
+				break;
+			case R.id.imageButtonTicketRepasRestau:
+				nbreClicTicketRepas++;
+				editTextTicketRepas.setText(""+nbreClicTicketRepas);
 				break;
 			}
-			nbreTotal = (nbreClicMenu*prixMenu)+(nbreClicCrepe*prixCrepe)
-					+(nbreClicPlat*prixPlat)+(nbreClicSoda*prixSoda) 
-					+(nbreClicCafeThe*prixCafeThe)+(nbreClicConfiserie*prixConfiserie)
-					+(nbreClicEau*prixEau);
+			nbreTotal = (nbreClicCrepe*prixCrepe)+(nbreClicPlat*prixPlat)
+					+(nbreClicSoda*prixSoda)+(nbreClicCafeThe*prixCafeThe)+(nbreClicConfiserie*prixConfiserie)
+					+(nbreClicTicketBoisson*prixTicketBoisson)+(nbreClicTicketRepas*prixTicketRepas);
 			editTextTotal.setText(""+nbreTotal);
 		}
 	};
@@ -235,12 +235,6 @@ public class RestauActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			switch(v.getId()) {
-			case R.id.buttonSupprMenu :
-				if(nbreClicMenu>0){
-					nbreClicMenu--;
-				}
-				editTextMenu.setText(""+nbreClicMenu);
-				break;
 			case R.id.buttonSupprCrepe :
 				if(nbreClicCrepe >0){
 					nbreClicCrepe--;
@@ -271,17 +265,23 @@ public class RestauActivity extends Activity {
 				}
 				editTextConfiserie.setText(""+nbreClicConfiserie);
 				break;
-			case R.id.buttonSupprEau:
-				if(nbreClicEau>0){
-					nbreClicEau--;
+			case R.id.buttonSupprTicketBoissonRestau:
+				if(nbreClicTicketBoisson>0){
+					nbreClicTicketBoisson--;
 				}
-				editTextEau.setText(""+nbreClicEau);
+				editTextTicketBoisson.setText(""+nbreClicTicketBoisson);
+				break;
+			case R.id.buttonSupprTicketRepasRestau:
+				if(nbreClicTicketRepas>0){
+					nbreClicTicketRepas--;
+				}
+				editTextTicketRepas.setText(""+nbreClicTicketRepas);
 				break;
 			}
-			nbreTotal = (nbreClicMenu*prixMenu)+(nbreClicCrepe*prixCrepe)
+			nbreTotal = (nbreClicCrepe*prixCrepe)
 					+(nbreClicPlat*prixPlat)+(nbreClicSoda*prixSoda) 
 					+(nbreClicCafeThe*prixCafeThe)+(nbreClicConfiserie*prixConfiserie)
-					+(nbreClicEau*prixEau);
+					+(nbreClicTicketBoisson*prixTicketBoisson)+(nbreClicTicketRepas*prixTicketRepas);
 			editTextTotal.setText(""+nbreTotal);
 		}
 	};
@@ -325,16 +325,71 @@ public class RestauActivity extends Activity {
         buttonCB = (Button) viewAlertDialogMoyenDePaiement.findViewById(R.id.idButtonCB);
         buttonEspece = (Button) viewAlertDialogMoyenDePaiement.findViewById(R.id.idButtonEspece);
         buttonTickets = (Button) viewAlertDialogMoyenDePaiement.findViewById(R.id.idButtonTickets);
+        buttonCheque = (Button) viewAlertDialogMoyenDePaiement.findViewById(R.id.idButtonCheque);
         
-//        buttonCB.setOnClickListener(listenerButtonChoixPaiment);
-//        buttonEspece.setOnClickListener(listenerButtonChoixPaiment);
-//        buttonTickets.setOnClickListener(listenerButtonChoixPaiment);
+        buttonCB.setOnClickListener(listenerButtonChoixPaiment);
+        buttonEspece.setOnClickListener(listenerButtonChoixPaiment);
+        buttonTickets.setOnClickListener(listenerButtonChoixPaiment);
+        buttonCheque.setOnClickListener(listenerButtonChoixPaiment);
 	}
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		//getMenuInflater().inflate(R.menu.restau, menu);
-		return true;
-	}
-
+	
+private OnClickListener listenerButtonChoixPaiment = new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			/* On fixe le moyen de paiment selon le bouton choisi */
+			int modePaiment = 0;
+			switch(v.getId()) {
+			case R.id.idButtonCB :
+				modePaiment = 0;
+				break;
+				
+			case R.id.idButtonEspece :
+				modePaiment = 1;
+				break;
+				
+			case R.id.idButtonTickets :
+				modePaiment = 2;
+				break;
+				
+			case R.id.idButtonCheque :
+				modePaiment = 3;
+				break;
+			}
+			
+			/* On stocke les données en base */
+			if(nbreClicCrepe > 0) {
+				MainActivity.transacManager.venteProduit(5, nbreClicCrepe, modePaiment);
+			}
+			
+			if(nbreClicPlat >0) {
+				MainActivity.transacManager.venteProduit(6, nbreClicPlat, modePaiment);
+			}
+			
+			if(nbreClicSoda > 0) {
+				MainActivity.transacManager.venteProduit(0, nbreClicSoda, modePaiment);
+			}
+			
+			if(nbreClicCafeThe > 0) {
+				MainActivity.transacManager.venteProduit(1, nbreClicCafeThe, modePaiment);
+			}
+			
+			if(nbreClicConfiserie > 0) {
+				MainActivity.transacManager.venteProduit(2, nbreClicConfiserie, modePaiment);
+			}
+			
+			if(nbreClicTicketBoisson > 0) {
+				MainActivity.transacManager.venteProduit(8, nbreClicTicketBoisson, modePaiment);
+			}
+			
+			if(nbreClicTicketRepas > 0) {
+				MainActivity.transacManager.venteProduit(9, nbreClicTicketRepas, modePaiment);
+			}
+			
+			/* On remet l'affichage à zéro et on ferme la fenêtre */
+			resetCommande();
+			Toast.makeText(getApplicationContext(), "Commande Enregistrée ! ", Toast.LENGTH_SHORT).show();
+			alertDialog.cancel();
+	    }
+	};
 }

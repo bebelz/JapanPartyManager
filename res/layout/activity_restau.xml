@@ -23,34 +23,10 @@
     		android:orientation="vertical" >
 
     		<LinearLayout
-    			android:layout_width="match_parent"
-    			android:layout_height="157dp"
-    			android:layout_weight="0.09"
-    			android:orientation="horizontal" >
-
-    			<LinearLayout
-    				android:layout_width="match_parent"
-    				android:layout_height="match_parent"
-    				android:layout_weight="0.33"
-    				android:orientation="vertical" >
-
-    				<ImageButton
-    					android:id="@+id/imageButtonMenu"
-    					android:layout_width="match_parent"
-    					android:layout_height="110dp"
-    					android:layout_marginRight="20dp"
-    					android:layout_weight="2.00"
-    					android:scaleType="centerCrop"
-    					android:src="@drawable/menu" />
-
-    				<TextView
-    					android:id="@+id/textViewMenu"
-    					android:layout_width="match_parent"
-    					android:layout_height="wrap_content"
-    					android:layout_weight="1.02"
-    					android:text="Menu"
-    					android:textAppearance="?android:attr/textAppearanceLarge" />
-    			</LinearLayout>
+    		    android:layout_width="match_parent"
+    		    android:layout_height="wrap_content"
+    		    android:layout_weight="0.33"
+    		    android:orientation="horizontal" >
 
     			<LinearLayout
     				android:layout_width="match_parent"
@@ -60,19 +36,19 @@
     				android:orientation="vertical" >
 
     				<ImageButton
-    					android:id="@+id/imageButtonCrepe"
-    					android:layout_width="match_parent"
-    					android:layout_height="110dp"
-    					android:layout_marginRight="20dp"
-    					android:scaleType="center"
-    					android:src="@drawable/crepes" />
+    				    android:id="@+id/imageButtonCrepe"
+    				    android:layout_width="match_parent"
+    				    android:layout_height="100dp"
+    				    android:layout_marginRight="20dp"
+    				    android:scaleType="centerInside"
+    				    android:src="@drawable/crepes" />
 
     				<TextView
     					android:id="@+id/labelCrepe"
     					android:layout_width="match_parent"
     					android:layout_height="wrap_content"
     					android:text="Crêpe"
-    					android:textAppearance="?android:attr/textAppearanceLarge" />
+    					android:textAppearance="?android:attr/textAppearanceSmall" />
     			</LinearLayout>
 
     			<LinearLayout
@@ -82,28 +58,34 @@
     				android:orientation="vertical" >
 
     				<ImageButton
-    					android:id="@+id/imageButtonPlat"
-    					android:layout_width="match_parent"
-    					android:layout_height="110dp"
-    					android:layout_marginRight="20dp"
-    					android:scaleType="centerCrop"
-    					android:src="@drawable/sandwich" />
+    				    android:id="@+id/imageButtonPlat"
+    				    android:layout_width="match_parent"
+    				    android:layout_height="100dp"
+    				    android:layout_marginRight="20dp"
+    				    android:scaleType="centerCrop"
+    				    android:src="@drawable/sandwich" />
 
     				<TextView
     					android:id="@+id/textViewPlat"
     					android:layout_width="wrap_content"
     					android:layout_height="wrap_content"
     					android:text="Plat"
-    					android:textAppearance="?android:attr/textAppearanceLarge" />
+    					android:textAppearance="?android:attr/textAppearanceSmall" />
     			</LinearLayout>
+
+    			<LinearLayout
+    			    android:layout_width="match_parent"
+    			    android:layout_height="match_parent"
+    			    android:layout_weight="0.33"
+    			    android:orientation="vertical" >
+    			</LinearLayout>
+
     		</LinearLayout>
 
     		<LinearLayout
-    			android:layout_width="match_parent"
-    			android:layout_height="wrap_content"
-    			android:layout_marginBottom="10dp"
-    			android:layout_marginTop="10dp"
-    			android:layout_weight="0.33" >
+    		    android:layout_width="match_parent"
+    		    android:layout_height="wrap_content"
+    		    android:layout_weight="0.33" >
 
     			<LinearLayout
     				android:layout_width="match_parent"
@@ -112,18 +94,19 @@
     				android:orientation="vertical" >
 
     				<ImageButton
-    					android:id="@+id/imageButtonSoda"
-    					android:layout_width="match_parent"
-    					android:layout_height="110dp"
-    					android:layout_marginRight="20dp"
-    					android:src="@drawable/logo_canette_ok" />
+    				    android:id="@+id/imageButtonSoda"
+    				    android:layout_width="match_parent"
+    				    android:layout_height="100dp"
+    				    android:layout_marginRight="20dp"
+    				    android:scaleType="centerInside"
+    				    android:src="@drawable/logo_canette_ok" />
 
     				<TextView
     					android:id="@+id/labelSoda"
     					android:layout_width="wrap_content"
     					android:layout_height="wrap_content"
     					android:text="Soda"
-    					android:textAppearance="?android:attr/textAppearanceLarge" />
+    					android:textAppearance="?android:attr/textAppearanceSmall" />
     			</LinearLayout>
 
     			<LinearLayout
@@ -133,18 +116,19 @@
     				android:orientation="vertical" >
 
     				<ImageButton
-    					android:id="@+id/imageButtonCafeThe"
-    					android:layout_width="fill_parent"
-    					android:layout_height="110dp"
-    					android:layout_marginRight="20dp"
-    					android:src="@drawable/cafe" />
+    				    android:id="@+id/imageButtonCafeThe"
+    				    android:layout_width="fill_parent"
+    				    android:layout_height="100dp"
+    				    android:layout_marginRight="20dp"
+    				    android:scaleType="centerInside"
+    				    android:src="@drawable/cafe" />
 
     				<TextView
     					android:id="@+id/textViewCafeThe"
     					android:layout_width="match_parent"
     					android:layout_height="wrap_content"
     					android:text="Café/Thé"
-    					android:textAppearance="?android:attr/textAppearanceLarge" />
+    					android:textAppearance="?android:attr/textAppearanceSmall" />
     			</LinearLayout>
 
     			<LinearLayout
@@ -154,18 +138,19 @@
     				android:orientation="vertical" >
 
     				<ImageButton
-    					android:id="@+id/imageButtonConfiserie"
-    					android:layout_width="match_parent"
-    					android:layout_height="110dp"
-    					android:layout_marginRight="20dp"
-    					android:src="@drawable/confiserie" />
+    				    android:id="@+id/imageButtonConfiserie"
+    				    android:layout_width="match_parent"
+    				    android:layout_height="100dp"
+    				    android:layout_marginRight="20dp"
+    				    android:scaleType="centerInside"
+    				    android:src="@drawable/confiserie" />
 
     				<TextView
     					android:id="@+id/textViewConfiserie"
     					android:layout_width="130dp"
     					android:layout_height="wrap_content"
     					android:text="Confiserie"
-    					android:textAppearance="?android:attr/textAppearanceLarge" />
+    					android:textAppearance="?android:attr/textAppearanceSmall" />
     			</LinearLayout>
     		</LinearLayout>
 
@@ -181,18 +166,19 @@
     				android:orientation="vertical" >
 
     				<ImageButton
-    					android:id="@+id/imageButtonEau"
-    					android:layout_width="match_parent"
-    					android:layout_height="110dp"
-    					android:layout_marginRight="10dp"
-    					android:src="@drawable/logo_bouteille_eau" />
+    				    android:id="@+id/imageButtonTicketBoissonRestau"
+    				    android:layout_width="match_parent"
+    				    android:layout_height="100dp"
+    				    android:layout_marginRight="20dp"
+    				    android:scaleType="centerInside"
+    				    android:src="@drawable/vert" />
 
     				<TextView
-    					android:id="@+id/labelEau"
-    					android:layout_width="146dp"
-    					android:layout_height="wrap_content"
-    					android:text="Eau"
-    					android:textAppearance="?android:attr/textAppearanceLarge" />
+    				    android:id="@+id/textView2"
+    				    android:layout_width="wrap_content"
+    				    android:layout_height="wrap_content"
+    				    android:text="Ticket Boisson" />
+
     			</LinearLayout>
 
     			<LinearLayout
@@ -200,21 +186,36 @@
     				android:layout_height="match_parent"
     				android:layout_weight="0.33"
     				android:orientation="vertical" >
+
+    				<ImageButton
+    				    android:id="@+id/imageButtonTicketRepasRestau"
+    				    android:layout_width="match_parent"
+    				    android:layout_height="100dp"
+    				    android:layout_marginRight="20dp"
+    				    android:scaleType="centerInside"
+    				    android:src="@drawable/violet" />
+
+    				<TextView
+    				    android:id="@+id/textView3"
+    				    android:layout_width="wrap_content"
+    				    android:layout_height="wrap_content"
+    				    android:text="Ticket Repas" />
+
     			</LinearLayout>
 
     			<LinearLayout
-    				android:layout_width="match_parent"
-    				android:layout_height="match_parent"
-    				android:layout_weight="0.33"
-    				android:orientation="vertical" >
+    			    android:layout_width="match_parent"
+    			    android:layout_height="match_parent"
+    			    android:layout_weight="0.33"
+    			    android:orientation="vertical" >
     			</LinearLayout>
+
     		</LinearLayout>
     	</LinearLayout>
 
     	<LinearLayout
-    		android:layout_width="wrap_content"
-    		android:layout_height="match_parent"
-    		android:layout_marginLeft="50dp" >
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="match_parent" >
 
     		<TableLayout
     			android:layout_width="wrap_content"
@@ -222,73 +223,17 @@
     			android:gravity="right" >
 
     			<TableRow
-    				android:id="@+id/tableRowEnTete"
-    				android:layout_width="fill_parent"
-    				android:layout_height="match_parent"
-    				android:layout_weight="0.05" >
+    			    android:id="@+id/tableRowCrepe"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="match_parent"
+    			    android:layout_weight="0.05" >
 
     				<TextView
-    					android:id="@+id/textViewCommande"
-    					android:layout_width="wrap_content"
-    					android:layout_height="wrap_content"
-    					android:text="COMMANDE"
-    					android:textAppearance="?android:attr/textAppearanceLarge" />
-    			</TableRow>
-
-    			<TableRow
-    				android:id="@+id/tableRowMenu"
-    				android:layout_width="wrap_content"
-    				android:layout_height="match_parent"
-    				android:layout_weight="0.05" >
-
-    				<TextView
-    					android:id="@+id/labelTotalMenu"
-    					android:layout_width="wrap_content"
-    					android:layout_height="wrap_content"
-    					android:text="Menu"
-    					android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    				<EditText
-    					android:id="@+id/editTextTotalMenu"
-    					android:layout_width="80dp"
-    					android:layout_height="wrap_content"
-    					android:cursorVisible="false"
-    					android:editable="false"
-    					android:inputType="number" >
-
-    					<requestFocus />
-    				</EditText>
-
-    				<TextView
-    					android:id="@+id/labelFoisPrixMenu"
-    					android:layout_width="wrap_content"
-    					android:layout_height="wrap_content"
-    					android:layout_marginLeft="10dp"
-    					android:layout_marginRight="10dp"
-    					android:text="x 1€"
-    					android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    				<Button
-    					android:id="@+id/buttonSupprMenu"
-    					style="?android:attr/buttonStyleSmall"
-    					android:layout_width="wrap_content"
-    					android:layout_height="wrap_content"
-    					android:layout_marginLeft="10dp"
-    					android:text="Suppr" />
-    			</TableRow>
-
-    			<TableRow
-    				android:id="@+id/tableRowCrepe"
-    				android:layout_width="wrap_content"
-    				android:layout_height="wrap_content"
-    				android:layout_weight="0.05" >
-
-    				<TextView
-    					android:id="@+id/labelTotalCrepe"
-    					android:layout_width="wrap_content"
-    					android:layout_height="wrap_content"
-    					android:text="Crêpe"
-    					android:textAppearance="?android:attr/textAppearanceMedium" />
+    				    android:id="@+id/labelTotalCrepe"
+    				    android:layout_width="wrap_content"
+    				    android:layout_height="wrap_content"
+    				    android:text="Crêpe"
+    				    android:textAppearance="?android:attr/textAppearanceSmall" />
 
     				<EditText
     					android:id="@+id/editTextTotalCrepe"
@@ -314,17 +259,17 @@
     			</TableRow>
 
     			<TableRow
-    				android:id="@+id/tableRowPlat"
-    				android:layout_width="wrap_content"
-    				android:layout_height="wrap_content"
-    				android:layout_weight="0.05" >
+    			    android:id="@+id/tableRowPlat"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="match_parent"
+    			    android:layout_weight="0.05" >
 
     				<TextView
     					android:id="@+id/labelTotalPlat"
     					android:layout_width="wrap_content"
     					android:layout_height="wrap_content"
     					android:text="Plat"
-    					android:textAppearance="?android:attr/textAppearanceMedium" />
+    					android:textAppearance="?android:attr/textAppearanceSmall" />
 
     				<EditText
     					android:id="@+id/editTextTotalPlat"
@@ -360,7 +305,7 @@
     					android:layout_width="wrap_content"
     					android:layout_height="wrap_content"
     					android:text="Soda"
-    					android:textAppearance="?android:attr/textAppearanceMedium" />
+    					android:textAppearance="?android:attr/textAppearanceSmall" />
 
     				<EditText
     					android:id="@+id/editTextTotalSoda"
@@ -389,17 +334,17 @@
     			</TableRow>
 
     			<TableRow
-    				android:id="@+id/tableRowCafeThe"
-    				android:layout_width="wrap_content"
-    				android:layout_height="wrap_content"
-    				android:layout_weight="0.05" >
+    			    android:id="@+id/tableRowCafeThe"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="match_parent"
+    			    android:layout_weight="0.05" >
 
     				<TextView
     					android:id="@+id/labelTotalCafeThe"
     					android:layout_width="wrap_content"
     					android:layout_height="wrap_content"
     					android:text="Café/Thé"
-    					android:textAppearance="?android:attr/textAppearanceMedium" />
+    					android:textAppearance="?android:attr/textAppearanceSmall" />
 
     				<EditText
     					android:id="@+id/editTextTotalCafeThe"
@@ -425,17 +370,17 @@
     			</TableRow>
 
     			<TableRow
-    				android:id="@+id/tableRowConfiserie"
-    				android:layout_width="wrap_content"
-    				android:layout_height="wrap_content"
-    				android:layout_weight="0.05" >
+    			    android:id="@+id/tableRowConfiserie"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="match_parent"
+    			    android:layout_weight="0.05" >
 
     				<TextView
     					android:id="@+id/labelTotalConfiserie"
     					android:layout_width="wrap_content"
     					android:layout_height="wrap_content"
     					android:text="Confiserie"
-    					android:textAppearance="?android:attr/textAppearanceMedium" />
+    					android:textAppearance="?android:attr/textAppearanceSmall" />
 
     				<EditText
     					android:id="@+id/editTextTotalConfiserie"
@@ -458,45 +403,82 @@
     					android:layout_height="wrap_content"
     					android:layout_marginLeft="10dp"
     					android:text="Suppr" />
+
     			</TableRow>
 
     			<TableRow
-    				android:id="@+id/tableRowEau"
-    				android:layout_width="wrap_content"
-    				android:layout_height="match_parent"
-    				android:layout_weight="0.05" >
+    			    android:id="@+id/TableRowTicketBoissonRestau"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="match_parent"
+    			    android:layout_weight="0.05" >
 
-    				<TextView
-    					android:id="@+id/labelTotalEau"
-    					android:layout_width="wrap_content"
-    					android:layout_height="wrap_content"
-    					android:text="Eau"
-    					android:textAppearance="?android:attr/textAppearanceMedium" />
+    			    <TextView
+    			        android:id="@+id/TextView04"
+    			        android:layout_width="wrap_content"
+    			        android:layout_height="wrap_content"
+    			        android:text="Ticket Boisson"
+    			        android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    				<EditText
-    					android:id="@+id/editTextTotalEau"
-    					android:layout_width="80dp"
-    					android:layout_height="wrap_content"
-    					android:cursorVisible="false"
-    					android:editable="false"
-    					android:inputType="number" />
+    			    <EditText
+    			        android:id="@+id/editTextTotalTicketBoissonRestau"
+    			        android:layout_width="wrap_content"
+    			        android:layout_height="wrap_content"
+    			        android:inputType="number" >
 
-    				<TextView
-    					android:id="@+id/labelFoisPrixEau"
-    					android:layout_width="wrap_content"
-    					android:layout_height="wrap_content"
-    					android:layout_marginLeft="10dp"
-    					android:layout_marginRight="10dp"
-    					android:text="x 1€"
-    					android:textAppearance="?android:attr/textAppearanceSmall" />
+    			        <requestFocus />
+    			    </EditText>
 
-    				<Button
-    					android:id="@+id/buttonSupprEau"
-    					style="?android:attr/buttonStyleSmall"
-    					android:layout_width="wrap_content"
-    					android:layout_height="wrap_content"
-    					android:layout_marginLeft="10dp"
-    					android:text="Suppr" />
+    			    <TextView
+    			        android:id="@+id/labelFoisPrixTicketBoissonRestau"
+    			        android:layout_width="wrap_content"
+    			        android:layout_height="wrap_content"
+    			        android:layout_marginLeft="10dp"
+    			        android:text="x 0.50€"
+    			        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    			    <Button
+    			        android:id="@+id/buttonSupprTicketBoissonRestau"
+    			        style="?android:attr/buttonStyleSmall"
+    			        android:layout_width="wrap_content"
+    			        android:layout_height="wrap_content"
+    			        android:layout_marginLeft="10dp"
+    			        android:text="Suppr" />
+    			</TableRow>
+
+    			<TableRow
+    			    android:id="@+id/TableRowTicketRepasRestau"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="match_parent"
+    			    android:layout_weight="0.05" >
+
+    			    <TextView
+    			        android:id="@+id/TextView02"
+    			        android:layout_width="wrap_content"
+    			        android:layout_height="wrap_content"
+    			        android:text="Ticket Repas"
+    			        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    			    <EditText
+    			        android:id="@+id/editTextTotalTicketRepasRestau"
+    			        android:layout_width="wrap_content"
+    			        android:layout_height="wrap_content"
+    			        android:inputType="number" />
+
+    			    <TextView
+    			        android:id="@+id/labelFoisPrixTicketRepasRestau"
+    			        android:layout_width="wrap_content"
+    			        android:layout_height="wrap_content"
+    			        android:layout_marginLeft="10dp"
+    			        android:text="x 6.50€"
+    			        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    			    <Button
+    			        android:id="@+id/buttonSupprTicketRepasRestau"
+    			        style="?android:attr/buttonStyleSmall"
+    			        android:layout_width="wrap_content"
+    			        android:layout_height="wrap_content"
+    			        android:layout_marginLeft="10dp"
+    			        android:text="Suppr" />
     			</TableRow>
 
     			<TableRow
@@ -511,7 +493,7 @@
     					android:layout_height="wrap_content"
     					android:layout_gravity="bottom"
     					android:text="Total"
-    					android:textAppearance="?android:attr/textAppearanceLarge" />
+    					android:textAppearance="?android:attr/textAppearanceSmall" />
 
     				<EditText
     					android:id="@+id/editTextTotal"
@@ -528,7 +510,7 @@
     					android:layout_height="wrap_content"
     					android:layout_gravity="bottom"
     					android:text="€"
-    					android:textAppearance="?android:attr/textAppearanceMedium" />
+    					android:textAppearance="?android:attr/textAppearanceSmall" />
     			</TableRow>
 
     			<TableRow
@@ -538,20 +520,21 @@
     				android:layout_weight="0.15" >
 
     				<Button
-    					android:id="@+id/buttonValiderCommande"
-    					android:layout_width="match_parent"
-    					android:layout_height="wrap_content"
-    					android:layout_gravity="bottom"
-    					android:layout_weight="0.2"
-    					android:text="Valider Commande" />
+    				    android:id="@+id/buttonValiderCommande"
+    				    android:layout_width="match_parent"
+    				    android:layout_height="match_parent"
+    				    android:layout_gravity="bottom"
+    				    android:layout_weight="0.2"
+    				    android:text="Valider Commande" />
 
     				<Button
-    					android:id="@+id/buttonAnnulerCommande"
-    					android:layout_width="match_parent"
-    					android:layout_height="wrap_content"
-    					android:layout_gravity="bottom|right"
-    					android:layout_weight="0.2"
-    					android:text="Annuler" />
+    				    android:id="@+id/buttonAnnulerCommande"
+    				    android:layout_width="match_parent"
+    				    android:layout_height="match_parent"
+    				    android:layout_gravity="bottom|right"
+    				    android:layout_weight="0.2"
+    				    android:text="Annuler" />
+
     			</TableRow>
     		</TableLayout>
     	</LinearLayout>
