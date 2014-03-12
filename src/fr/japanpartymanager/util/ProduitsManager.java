@@ -22,7 +22,7 @@ public class ProduitsManager {
 		listeProduits.add((float) 2.5); // BubbleTea ; id = 3
 		listeProduits.add((float) 6.5); // Menu ; id = 4
 		listeProduits.add((float) 2); // Crepe ; id = 5
-		listeProduits.add((float) 2.5); // Plat ; id = 6
+		listeProduits.add((float) 3); // Plat ; id = 6
 		listeProduits.add((float) 1); // Eau ; id = 7
 		listeProduits.add((float) 0.5); // Ticket Boisson ; id = 8
 		listeProduits.add((float) 6.5); // Ticket Repas ; id = 9
