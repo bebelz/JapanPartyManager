@@ -7,5 +7,7 @@
     <string name="title_activity_restau">Restau</string>
     <string name="title_activity_bar">BarActivity</string>
     <string name="title_activity_entree">EntreeActivity</string>
+    <string name="title_activity_caisse_samedi">CaisseSamediActivity</string>
+    <string name="title_activity_caisse_dimanche">CaisseDimancheActivity</string>
 
 </resources>

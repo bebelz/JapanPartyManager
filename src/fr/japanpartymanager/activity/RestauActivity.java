@@ -87,8 +87,8 @@ public class RestauActivity extends Activity {
 		buttonCrepe 			= (ImageButton)findViewById(R.id.imageButtonCrepe);
 		buttonPlat 				= (ImageButton)findViewById(R.id.imageButtonPlat);
 		buttonSoda				= (ImageButton)findViewById(R.id.imageButtonSoda);
-		buttonCafeThe 			= (ImageButton)findViewById(R.id.imageButtonCafeThe);
-		buttonConfiserie 		= (ImageButton)findViewById(R.id.imageButtonConfiserie);
+		buttonCafeThe 			= (ImageButton)findViewById(R.id.imageButtonCafeTheRestau);
+		buttonConfiserie 		= (ImageButton)findViewById(R.id.imageButtonConfiserieRestau);
 		buttonTicketBoisson     = (ImageButton)findViewById(R.id.imageButtonTicketBoissonRestau);
 		buttonTicketRepas       = (ImageButton)findViewById(R.id.imageButtonTicketRepasRestau);
 
@@ -100,8 +100,8 @@ public class RestauActivity extends Activity {
 		buttonSupprTicketBoisson = (Button)findViewById(R.id.buttonSupprTicketBoissonRestau);
 		buttonSupprTicketRepas   = (Button)findViewById(R.id.buttonSupprTicketRepasRestau);
 
-		buttonAnnulerCommande	= (Button)findViewById(R.id.buttonAnnulerCommande);
-		buttonValiderCommande	= (Button)findViewById(R.id.buttonValiderCommande);
+		buttonAnnulerCommande	= (Button)findViewById(R.id.buttonAnnulerCommandeSamedi);
+		buttonValiderCommande	= (Button)findViewById(R.id.buttonValiderCommandeSamedi);
 
 		editTextCrepe 			= (EditText)findViewById(R.id.editTextTotalCrepe);
 		editTextPlat 			= (EditText)findViewById(R.id.editTextTotalPlat);
@@ -110,7 +110,7 @@ public class RestauActivity extends Activity {
 		editTextConfiserie 		= (EditText)findViewById(R.id.editTextTotalConfiserie);
 		editTextTicketBoisson   = (EditText)findViewById(R.id.editTextTotalTicketBoissonRestau);
 		editTextTicketRepas     = (EditText)findViewById(R.id.editTextTotalTicketRepasRestau);
-		editTextTotal 			= (EditText)findViewById(R.id.editTextTotal);
+		editTextTotal 			= (EditText)findViewById(R.id.editTextTotalSamedi);
 
 		labelFoisPrixCrepe = (TextView)findViewById(R.id.labelFoisPrixCrepe);
 		labelFoisPrixCrepe.setText("x "+prixCrepe+"€");
@@ -206,11 +206,11 @@ public class RestauActivity extends Activity {
 				nbreClicSoda++;
 				editTextSoda.setText(""+nbreClicSoda);
 				break;
-			case R.id.imageButtonCafeThe :
+			case R.id.imageButtonCafeTheRestau :
 				nbreClicCafeThe++;
 				editTextCafeThe.setText(""+nbreClicCafeThe);
 				break;
-			case R.id.imageButtonConfiserie:
+			case R.id.imageButtonConfiserieRestau:
 				nbreClicConfiserie++;
 				editTextConfiserie.setText(""+nbreClicConfiserie);
 				break;

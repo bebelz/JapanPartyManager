@@ -90,19 +90,19 @@ public class BarActivity extends Activity {
         buttonSupprCafeThe		 = (Button)findViewById(R.id.buttonSupprCafeThe);
         buttonSupprConfiserie 	 = (Button)findViewById(R.id.buttonSupprConfiserie);
         buttonSupprBubbleTea 	 = (Button)findViewById(R.id.buttonSupprBubbleTea);
-        buttonSupprTicketBoisson = (Button)findViewById(R.id.buttonSupprTicketBoisson);
-        buttonSupprTicketRepas   = (Button)findViewById(R.id.buttonSupprTicketRepas);
+        buttonSupprTicketBoisson = (Button)findViewById(R.id.buttonSupprTicketBoissonSamedi);
+        buttonSupprTicketRepas   = (Button)findViewById(R.id.buttonSupprTicketRepasSamedi);
         
-        buttonAnnulerCommande	= (Button)findViewById(R.id.buttonAnnulerCommande);
-        buttonValiderCommande	= (Button)findViewById(R.id.buttonValiderCommande);
+        buttonAnnulerCommande	= (Button)findViewById(R.id.buttonAnnulerCommandeSamedi);
+        buttonValiderCommande	= (Button)findViewById(R.id.buttonValiderCommandeSamedi);
         
-        editTextSodasJus 		= (EditText)findViewById(R.id.editTextTotalSodasJus);
+        editTextSodasJus 		= (EditText)findViewById(R.id.editTextTotalBilletPayantSamedi);
         editTextCafeThe 		= (EditText)findViewById(R.id.editTextTotalCafeThe);
         editTextConfiserie 		= (EditText)findViewById(R.id.editTextTotalConfiserie);
         editTextBubbleTea		= (EditText)findViewById(R.id.editTextTotalBubbleTea);
-        editTextTicketBoisson   = (EditText)findViewById(R.id.editTextTotalTicketBoisson);
-        editTextTicketRepas     = (EditText)findViewById(R.id.editTextTotalTicketRepas);
-        editTextTotal 			= (EditText)findViewById(R.id.editTextTotal);
+        editTextTicketBoisson   = (EditText)findViewById(R.id.editTextTotalTicketBoissonSamedi);
+        editTextTicketRepas     = (EditText)findViewById(R.id.editTextTotalTicketRepasSamedi);
+        editTextTotal 			= (EditText)findViewById(R.id.editTextTotalSamedi);
         
         labelFoisPrixSodasJus = (TextView)findViewById(R.id.labelFoisPrixSodasJus);
         labelFoisPrixSodasJus.setText("x "+prixSodasJus+"€");
@@ -116,10 +116,10 @@ public class BarActivity extends Activity {
         labelFoisPrixBubbleTea = (TextView)findViewById(R.id.labelFoisPrixBubbleTea);
         labelFoisPrixBubbleTea.setText("x "+prixBubbleTea+"€");
         
-        labelFoisPrixTicketBoisson = (TextView)findViewById(R.id.labelFoisPrixTicketBoisson);
+        labelFoisPrixTicketBoisson = (TextView)findViewById(R.id.labelFoisPrixTicketBoissonSamedi);
         labelFoisPrixTicketBoisson.setText("x "+prixTicketBoisson+"€");
         
-        labelFoisPrixTicketRepas = (TextView)findViewById(R.id.labelFoisPrixTicketRepas);
+        labelFoisPrixTicketRepas = (TextView)findViewById(R.id.labelFoisPrixTicketRepasSamedi);
         labelFoisPrixTicketRepas.setText("x "+prixTicketRepas+"€");
         
         nbreClicSodasJus 	  = 0;
@@ -239,13 +239,13 @@ public class BarActivity extends Activity {
 				}
 				editTextBubbleTea.setText(""+nbreClicBubbleTea);
 				break;
-			case R.id.buttonSupprTicketBoisson:
+			case R.id.buttonSupprTicketBoissonSamedi:
 				if(nbreClicTicketBoisson>0){
 					nbreClicTicketBoisson--;
 				}
 				editTextTicketBoisson.setText(""+nbreClicTicketBoisson);
 				break;
-			case R.id.buttonSupprTicketRepas:
+			case R.id.buttonSupprTicketRepasSamedi:
 				if(nbreClicTicketRepas>0){
 					nbreClicTicketRepas--;
 				}

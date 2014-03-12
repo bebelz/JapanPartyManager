@@ -26,6 +26,12 @@ public class ProduitsManager {
 		listeProduits.add((float) 1); // Eau ; id = 7
 		listeProduits.add((float) 0.5); // Ticket Boisson ; id = 8
 		listeProduits.add((float) 6.5); // Ticket Repas ; id = 9
+		listeProduits.add((float) 8.5); // Billet Payant Samedi ; id = 10
+		listeProduits.add((float) 0); // Billet Gratuit Samedi ; id = 11
+		listeProduits.add((float) 2); // Tombola ; id = 12
+		listeProduits.add((float) 11); // Poster ; id = 13
+		listeProduits.add((float) 7.5); // Billet Payant Samedi ; id = 14
+		listeProduits.add((float) 0); // Billet Gratuit Samedi ; id = 15
 	}
 	
 	/**

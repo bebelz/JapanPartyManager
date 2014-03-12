@@ -199,20 +199,20 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRowCanettes"
+                    android:id="@+id/tableRowBilletPayantSamedi"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.05" >
 
                     <TextView
-                        android:id="@+id/labelTotalSodasJus"
+                        android:id="@+id/labelTotalBilletPayantSamedi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sodas/Jus"
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/editTextTotalSodasJus"
+                        android:id="@+id/editTextTotalBilletPayantSamedi"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:inputType="number" 
@@ -370,13 +370,13 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/editTextTotalTicketBoisson"
+                        android:id="@+id/editTextTotalTicketBoissonSamedi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:inputType="number" />
 
                     <TextView
-                        android:id="@+id/labelFoisPrixTicketBoisson"
+                        android:id="@+id/labelFoisPrixTicketBoissonSamedi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -384,7 +384,7 @@
                         android:textAppearance="?android:attr/textAppearanceSmall" />
 
                     <Button
-                        android:id="@+id/buttonSupprTicketBoisson"
+                        android:id="@+id/buttonSupprTicketBoissonSamedi"
                         style="?android:attr/buttonStyleSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -406,13 +406,13 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/editTextTotalTicketRepas"
+                        android:id="@+id/editTextTotalTicketRepasSamedi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:inputType="number" />
 
                     <TextView
-                        android:id="@+id/labelFoisPrixTicketRepas"
+                        android:id="@+id/labelFoisPrixTicketRepasSamedi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -420,7 +420,7 @@
                         android:textAppearance="?android:attr/textAppearanceSmall" />
 
                     <Button
-                        android:id="@+id/buttonSupprTicketRepas"
+                        android:id="@+id/buttonSupprTicketRepasSamedi"
                         style="?android:attr/buttonStyleSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -443,7 +443,7 @@
                         android:textAppearance="?android:attr/textAppearanceSmall" />
 
                     <EditText
-                        android:id="@+id/editTextTotal"
+                        android:id="@+id/editTextTotalSamedi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
@@ -468,7 +468,7 @@
                     android:layout_weight="0.15" >
 
                     <Button
-                        android:id="@+id/buttonValiderCommande"
+                        android:id="@+id/buttonValiderCommandeSamedi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
@@ -476,7 +476,7 @@
                         android:text="Valider Commande" />
 
                     <Button
-                        android:id="@+id/buttonAnnulerCommande"
+                        android:id="@+id/buttonAnnulerCommandeSamedi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"

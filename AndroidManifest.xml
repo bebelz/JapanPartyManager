@@ -7,7 +7,7 @@
     <uses-sdk
         android:minSdkVersion="15"
         android:targetSdkVersion="18" />
-    
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -15,7 +15,6 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        
         <activity
             android:name="fr.japanpartymanager.activity.MainActivity"
             android:label="@string/app_name" >
@@ -25,7 +24,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         <activity
             android:name="fr.japanpartymanager.activity.RestauActivity"
             android:label="@string/title_activity_restau" >
@@ -37,6 +35,14 @@
         <activity
             android:name="fr.japanpartymanager.activity.EntreeActivity"
             android:label="@string/title_activity_entree" >
+        </activity>
+        <activity
+            android:name="fr.japanpartymanager.activity.CaisseSamediActivity"
+            android:label="@string/title_activity_caisse_samedi" >
+        </activity>
+        <activity
+            android:name="fr.japanpartymanager.activity.CaisseDimancheActivity"
+            android:label="@string/title_activity_caisse_dimanche" >
         </activity>
     </application>
 
