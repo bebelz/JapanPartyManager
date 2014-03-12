@@ -9,5 +9,6 @@
     <string name="title_activity_entree">EntreeActivity</string>
     <string name="title_activity_caisse_samedi">CaisseSamediActivity</string>
     <string name="title_activity_caisse_dimanche">CaisseDimancheActivity</string>
+    <string name="title_activity_stats">StatsActivity</string>
 
 </resources>

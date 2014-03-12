@@ -56,7 +56,8 @@ public class MainActivity extends Activity {
 				startActivity(barActivity);
 				break;
 			case R.id.buttonStats :
-				// Lancer Fenêtre Stats !
+				Intent statActivity = new Intent(getApplicationContext(), StatsActivity.class);
+				startActivity(statActivity);
 				break;
 			case R.id.buttonCaisseSamedi :
 				Intent samediActivity = new Intent(getApplicationContext(), CaisseSamediActivity.class);

@@ -44,6 +44,10 @@
             android:name="fr.japanpartymanager.activity.CaisseDimancheActivity"
             android:label="@string/title_activity_caisse_dimanche" >
         </activity>
+        <activity
+            android:name="fr.japanpartymanager.activity.StatsActivity"
+            android:label="@string/title_activity_stats" >
+        </activity>
     </application>
 
 </manifest>

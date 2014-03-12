@@ -111,15 +111,19 @@ public class TransactionDB {
     			COL_ID_PRODUIT + " = " + id_produit,
     			null, null, null, null);
     	
-    	c.moveToFirst();
-    	do {
-    		toReturn.add(cursorToTransaction(c));
-    		c.moveToNext();
+    	if(c.getCount() > 0) {
+	    	c.moveToFirst();
+	    	do {
+	    		toReturn.add(cursorToTransaction(c));
+	    		c.moveToNext();
+	    	}
+	    	while (!c.isAfterLast());
+	    	
+	    	c.close();
+	    	return toReturn;
+    	} else {
+    		return null;
     	}
-    	while (!c.isAfterLast());
-    	
-    	c.close();
-    	return toReturn;
     }
     
     /**

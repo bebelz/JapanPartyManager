@@ -194,7 +194,7 @@
                         android:id="@+id/labelTotalBilletPayantDimanche"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Billet Payante"
+                        android:text="Billet Payant"
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
