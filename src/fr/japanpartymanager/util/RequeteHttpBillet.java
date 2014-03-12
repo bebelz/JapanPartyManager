@@ -24,7 +24,7 @@ import android.os.AsyncTask;
  * Effectue les requêtes sur le serveur dans une AsynTask afin de ne pas impacter sur le Thread UI
  */
 public class RequeteHttpBillet extends AsyncTask<String, Void, String>{
-	String addrServeur = "http://shop.japan-party.net/bip.php?nohtml";
+	String addrServeur = "http://192.168.200.200/shop/bip.php?nohtml";
 
 	@Override
 	protected String doInBackground(String... params) {
