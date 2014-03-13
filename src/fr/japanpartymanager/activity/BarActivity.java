@@ -37,6 +37,7 @@ public class BarActivity extends Activity {
 	Button buttonEspece             = null;
 	Button buttonTickets            = null;
 	Button buttonCheque             = null;
+	Button buttonRetour             = null;
 	
 	EditText editTextSodasJus 		= null;
 	EditText editTextCafeThe 		= null;
@@ -299,15 +300,22 @@ public class BarActivity extends Activity {
         buttonEspece = (Button) viewAlertDialogMoyenDePaiement.findViewById(R.id.idButtonEspece);
         buttonTickets = (Button) viewAlertDialogMoyenDePaiement.findViewById(R.id.idButtonTickets);
         buttonCheque = (Button) viewAlertDialogMoyenDePaiement.findViewById(R.id.idButtonCheque);
+        buttonRetour = (Button)viewAlertDialogMoyenDePaiement.findViewById(R.id.buttonRetour);
         
         buttonCB.setOnClickListener(listenerButtonChoixPaiment);
         buttonEspece.setOnClickListener(listenerButtonChoixPaiment);
         buttonTickets.setOnClickListener(listenerButtonChoixPaiment);
         buttonCheque.setOnClickListener(listenerButtonChoixPaiment);
+        
+        buttonRetour.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				alertDialog.cancel();
+			}
+		});
 	}
 	
 	private OnClickListener listenerButtonChoixPaiment = new OnClickListener() {
-		
 		@Override
 		public void onClick(View v) {
 			/* On fixe le moyen de paiment selon le bouton choisi */
