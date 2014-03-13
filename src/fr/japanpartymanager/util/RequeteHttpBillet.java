@@ -25,6 +25,7 @@ import android.os.AsyncTask;
  */
 public class RequeteHttpBillet extends AsyncTask<String, Void, String>{
 	String addrServeur = "http://192.168.200.200/shop/bip.php?nohtml";
+	//String addrServeur = "http://shop.japan-party.net/bip.php?nohtml";
 
 	@Override
 	protected String doInBackground(String... params) {

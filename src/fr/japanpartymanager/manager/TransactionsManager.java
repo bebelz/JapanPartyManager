@@ -1,4 +1,4 @@
-package manager;
+package fr.japanpartymanager.manager;
 
 import java.util.List;
 

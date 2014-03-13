@@ -1,6 +1,5 @@
 package fr.japanpartymanager.activity;
 
-import manager.TransactionsManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import fr.japanpartymanager.R;
+import fr.japanpartymanager.manager.TransactionsManager;
 
 public class MainActivity extends Activity {
 	static TransactionsManager transacManager = null; // Va permettre de gérer toutes les requêtes DB dans l'appli
