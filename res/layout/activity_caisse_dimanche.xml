@@ -36,11 +36,11 @@
                     android:orientation="vertical" >
 
                     <ImageButton
-                        android:id="@+id/imageButtonBilletPayantDimanche"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/logo_canette_ok" />
+                    	android:id="@+id/imageButtonBilletPayantDimanche"
+                    	android:layout_width="match_parent"
+                    	android:layout_height="100dp"
+                    	android:scaleType="centerCrop"
+                    	android:src="@drawable/billet_payant" />
 
                     <TextView
                         android:id="@+id/labelBilletPayantDimanche"
@@ -58,11 +58,11 @@
                     android:orientation="vertical" >
 
                     <ImageButton
-                        android:id="@+id/imageButtonBilletGratuitDimanche"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/bubbletea" />
+                    	android:id="@+id/imageButtonBilletGratuitDimanche"
+                    	android:layout_width="match_parent"
+                    	android:layout_height="100dp"
+                    	android:scaleType="centerCrop"
+                    	android:src="@drawable/billet_gratuit" />
 
                     <TextView
                         android:id="@+id/labelBilletGratuitDimanche"
@@ -87,11 +87,11 @@
                     android:orientation="vertical" >
 
                     <ImageButton
-                        android:id="@+id/imageButtonTombolaDimanche"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/cafe" />
+                    	android:id="@+id/imageButtonTombolaDimanche"
+                    	android:layout_width="match_parent"
+                    	android:layout_height="100dp"
+                    	android:scaleType="centerCrop"
+                    	android:src="@drawable/ticket_tombola" />
 
                     <TextView
                         android:id="@+id/labelTombola"
@@ -108,11 +108,11 @@
                     android:orientation="vertical" >
 
                     <ImageButton
-                        android:id="@+id/imageButtonPosterDimanche"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/mars" />
+                    	android:id="@+id/imageButtonPosterDimanche"
+                    	android:layout_width="match_parent"
+                    	android:layout_height="100dp"
+                    	android:scaleType="centerCrop"
+                    	android:src="@drawable/poster" />
 
                     <TextView
                         android:id="@+id/labelPoster"
@@ -136,12 +136,12 @@
                     android:orientation="vertical" >
 
                     <ImageButton
-                        android:id="@+id/imageButtonTicketBoissonDimanche"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:adjustViewBounds="false"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/vert" />
+                    	android:id="@+id/imageButtonTicketBoissonDimanche"
+                    	android:layout_width="match_parent"
+                    	android:layout_height="100dp"
+                    	android:adjustViewBounds="false"
+                    	android:scaleType="centerCrop"
+                    	android:src="@drawable/ticket_boisson" />
 
                     <TextView
                         android:id="@+id/labelTicketVert"
@@ -158,11 +158,11 @@
                     android:orientation="vertical" >
 
                     <ImageButton
-                        android:id="@+id/imageButtonTicketRepasDimanche"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/violet" />
+                    	android:id="@+id/imageButtonTicketRepasDimanche"
+                    	android:layout_width="match_parent"
+                    	android:layout_height="100dp"
+                    	android:scaleType="centerCrop"
+                    	android:src="@drawable/ticket_repas" />
 
                     <TextView
                         android:id="@+id/labelTicketViolet"
@@ -200,8 +200,7 @@
                     <EditText
                         android:id="@+id/editTextTotalBilletPayantDimanche"
                         android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:inputType="number" 
+                        android:layout_height="wrap_content" 
 						android:editable="false"
 						android:cursorVisible="false">
                         <requestFocus />
@@ -243,7 +242,6 @@
                         android:id="@+id/editTextTotalBilletGratuitDimanche"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
                         android:editable="false"
 						android:cursorVisible="false" />
 
@@ -284,8 +282,7 @@
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:cursorVisible="false"
-                        android:editable="false"
-                        android:inputType="number" />
+                        android:editable="false"/>
 
                     <TextView
                         android:id="@+id/labelFoisPrixTombolaDimanche"
@@ -322,7 +319,8 @@
                         android:id="@+id/editTextTotalPosterDimanche"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="number" />
+    					android:editable="false"
+						android:cursorVisible="false"  />
 
                     <TextView
                         android:id="@+id/labelFoisPrixPosterDimanche"
@@ -359,7 +357,8 @@
                         android:id="@+id/editTextTotalTicketBoissonDimanche"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="number" />
+    					android:editable="false"
+						android:cursorVisible="false"  />
 
                     <TextView
                         android:id="@+id/labelFoisPrixTicketBoissonDimanche"
@@ -395,7 +394,8 @@
                         android:id="@+id/editTextTotalTicketRepasDimanche"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="number" />
+    					android:editable="false"
+						android:cursorVisible="false"  />
 
                     <TextView
                         android:id="@+id/labelFoisPrixTicketRepasDimanche"
@@ -433,7 +433,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
-                        android:inputType="number"
                         android:editable="false"
 						android:cursorVisible="false" />
 

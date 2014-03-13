@@ -215,7 +215,6 @@
                         android:id="@+id/editTextTotalBilletPayantSamedi"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:inputType="number" 
 						android:editable="false"
 						android:cursorVisible="false">
                         <requestFocus />
@@ -257,7 +256,6 @@
                         android:id="@+id/editTextTotalCafeThe"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
                         android:editable="false"
 						android:cursorVisible="false" />
 
@@ -298,8 +296,7 @@
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:cursorVisible="false"
-                        android:editable="false"
-                        android:inputType="number" />
+                        android:editable="false"/>
 
                     <TextView
                         android:id="@+id/labelFoisPrixConfiserie"
@@ -336,7 +333,8 @@
                         android:id="@+id/editTextTotalBubbleTea"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="number" />
+    					android:editable="false"
+						android:cursorVisible="false" />
 
                     <TextView
                         android:id="@+id/labelFoisPrixBubbleTea"
@@ -373,7 +371,8 @@
                         android:id="@+id/editTextTotalTicketBoissonSamedi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="number" />
+    					android:editable="false"
+						android:cursorVisible="false" />
 
                     <TextView
                         android:id="@+id/labelFoisPrixTicketBoissonSamedi"
@@ -408,8 +407,9 @@
                     <EditText
                         android:id="@+id/editTextTotalTicketRepasSamedi"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="number" />
+                        android:layout_height="wrap_content" 
+    					android:editable="false"
+						android:cursorVisible="false" />
 
                     <TextView
                         android:id="@+id/labelFoisPrixTicketRepasSamedi"
@@ -447,7 +447,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
-                        android:inputType="number"
                         android:editable="false"
 						android:cursorVisible="false" />
 
